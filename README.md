@@ -55,7 +55,7 @@ The project is divided into the following folders:
 ## **How to Run Locally**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/event-manager.git
+   git clone https://github.com/todorovboris/Eventissimo
 
 2. Navigate to the project directory:
    ```bash
@@ -70,3 +70,12 @@ The project is divided into the following folders:
    npm start
 
 5. The app will run at http://localhost:3000
+
+
+##Contact
+For any questions or feedback, please contact:
+
+Name: Boris Todorov
+Email: btodorovtodorov@gmail.com
+GitHub: [https://github.com/todorovboris]
+
