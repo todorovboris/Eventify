@@ -59,7 +59,7 @@ The project is divided into the following folders:
 
 2. Navigate to the project directory:
    ```bash
-   cd event-manager
+   cd Eventissimo
 
 3. Install dependencies:
    ```bash
