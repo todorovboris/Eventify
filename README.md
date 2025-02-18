@@ -75,7 +75,7 @@ The project is divided into the following folders:
 ## Contact
 For any questions or feedback, please contact:
 
-Name: Boris Todorov
-\nEmail: btodorovtodorov@gmail.com
-\nGitHub: [https://github.com/todorovboris]
+Name: Boris Todorov;
+Email: btodorovtodorov@gmail.com;
+GitHub: [https://github.com/todorovboris];
 
