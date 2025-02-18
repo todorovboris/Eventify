@@ -72,10 +72,10 @@ The project is divided into the following folders:
 5. The app will run at http://localhost:3000
 
 
-##Contact
+## Contact
 For any questions or feedback, please contact:
 
 Name: Boris Todorov
-Email: btodorovtodorov@gmail.com
-GitHub: [https://github.com/todorovboris]
+\nEmail: btodorovtodorov@gmail.com
+\nGitHub: [https://github.com/todorovboris]
 
