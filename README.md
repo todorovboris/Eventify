@@ -1,4 +1,4 @@
-# Eventissimo - Event Manager Platform
+# Eventify - Event Manager Platform
 
 ## **Description**
 Event Manager Platform is a web application built with React that allows users to create, manage, and participate in events. The application is divided into a public section, accessible to all users, and a private section for registered users. 
