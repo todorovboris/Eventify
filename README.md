@@ -1,7 +1,7 @@
 # Eventify - Event Manager Platform
 
 ## **Description**
-Event Manager Platform is a web application built with React that allows users to create, manage, and participate in events. The application is divided into a public section, accessible to all users, and a private section for registered users. 
+Eventify is a web application built with React that allows users to create, manage, and participate in events. The application is divided into a public section, accessible to all users, and a private section for registered users. 
 
 The platform supports full CRUD operations for events and includes features such as authentication, route guards, and a modern, user-friendly UI.
 
@@ -55,11 +55,11 @@ The project is divided into the following folders:
 ## **How to Run Locally**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/todorovboris/Eventissimo
+   git clone https://github.com/todorovboris/Eventify
 
 2. Navigate to the project directory:
    ```bash
-   cd Eventissimo
+   cd Eventify
 
 3. Install dependencies:
    ```bash
