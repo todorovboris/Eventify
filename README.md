@@ -38,7 +38,7 @@ The platform supports full CRUD operations for events and includes features such
 
 - **Other:**
   - GitHub for source control
-  - Deployment on [Heroku/Firebase] (planned)
+  - Deployment on [Firebase] (planned)
 
 ---
 
