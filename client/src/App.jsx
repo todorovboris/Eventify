@@ -1,7 +1,7 @@
 function App() {
     return (
         <>
-            <p>Eventify</p>
+            <h2>Eventify</h2>
         </>
     );
 }
