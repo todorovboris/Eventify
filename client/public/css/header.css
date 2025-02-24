@@ -1,12 +1,18 @@
-/* Основни стилове за хедъра */
 header {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Синьо-лилав градиент */
+    background: white;
     color: white;
-    padding: 20px 40px;
+    padding: 5px 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center; /* Този стил не се променя, защото подравнява елементите вертикално */
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center; /* Това ще подравни навигацията по горния ръб */
+    justify-content: center; /* Центрира линковете хоризонтално */
 }
 
 .header-container {
@@ -20,7 +26,7 @@ header {
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: linear-gradient(135deg, #3079d8, #892c82); /* Синьо-лилав градиент */
     transition: color 0.3s ease;
 }
 
@@ -33,16 +39,13 @@ header {
     width: auto; /* Запазва съотношението на страните на изображението */
 }
 
-/* Стилове за навигацията */
-nav {
-    flex-grow: 1;
-}
-
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: center; /* Центрира линковете хоризонтално */
+    align-items: center; /* Центрира линковете вертикално */
+    gap: 50px;
+    height: 100%; /* Ако е нужно да се запълни височината на родителския контейнер */
 }
 
 .nav-links li {
@@ -51,11 +54,34 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: white;
+    color: linear-gradient(135deg, #3079d8, #892c82); /* Синьо-лилав градиент */
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
+    font-weight: bold;
+}
+
+.nav-auth {
+    list-style: none;
+    display: flex;
+    justify-content: right; /* Центрира линковете хоризонтално */
+    align-items: center; /* Центрира линковете вертикално */
+    gap: 50px;
+    height: 100%; /* Ако е нужно да се запълни височината на родителския контейнер */
+}
+
+.nav-auth li {
+    font-size: 18px;
+}
+
+.nav-auth a {
+    text-decoration: none;
+    color: linear-gradient(135deg, #3079d8, #892c82); /* Синьо-лилав градиент */
+    transition: color 0.3s ease;
+}
+
+.nav-auth a:hover {
     font-weight: bold;
 }
 

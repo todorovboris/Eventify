@@ -1,13 +1,13 @@
 export default function Header() {
     return (
         <header>
+            <div className="logo">
+                <a href="/">
+                    <img src="/images/Gemini_Generated_logoTextBig.jpeg" alt="Eventify" />
+                    {/* Eventify */}
+                </a>
+            </div>
             <nav>
-                <div className="logo">
-                    <a href="/">
-                        {/* <img src="/images/eventify_logo.png" alt="Eventify" /> */}
-                        Eventify
-                    </a>
-                </div>
                 <ul className="nav-links">
                     <li>
                         <a href="/">Home</a>
@@ -15,6 +15,11 @@ export default function Header() {
                     <li>
                         <a href="/events">Events</a>
                     </li>
+                    <li>
+                        <a href="/search">Search</a>
+                    </li>
+                </ul>
+                <ul className="nav-auth">
                     <li>
                         <a href="/login">Login</a>
                     </li>
@@ -25,10 +30,10 @@ export default function Header() {
                         <a href="/logout">Logout</a>
                     </li>
                 </ul>
-                <div className="search">
+                {/* <div className="search">
                     <input type="text" placeholder="Search for event..." />
                     <button>Search</button>
-                </div>
+                </div> */}
             </nav>
         </header>
     );
