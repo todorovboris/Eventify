@@ -22,12 +22,6 @@ function App() {
                 <Route path="/register" element={<Register />} />
             </Routes>
         </>
-        // <Router>
-        //     <Header />
-
-        //     <Routes>
-        //     </Routes>
-        // </Router>
     );
 }
 
