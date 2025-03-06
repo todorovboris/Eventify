@@ -9,14 +9,17 @@ export default function Header() {
             </div>
             <nav>
                 <ul className="nav-links">
-                    <li>
+                    {/* <li>
                         <a href="/">Home</a>
-                    </li>
+                    </li> */}
                     <li>
                         <a href="/events">Events</a>
                     </li>
                     <li>
                         <a href="/search">Search</a>
+                    </li>
+                    <li>
+                        <a href="/profile">Profile</a>
                     </li>
                 </ul>
                 <ul className="nav-auth">
