@@ -1,7 +1,7 @@
 export default function Events() {
     return (
-        <>
-            <h2>Dashbaord Events</h2>
-        </>
+        <div className="dashboard-page">
+            <h2>Events Page</h2>
+        </div>
     );
 }
