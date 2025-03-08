@@ -1,4 +1,4 @@
-export default function Header() {
+export default function Navigation() {
     return (
         <header>
             <div className="logo">

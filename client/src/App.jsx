@@ -1,6 +1,6 @@
 import { Routes, Route, Router } from 'react-router';
 
-import Header from './components/Header.jsx';
+import Navigation from './components/Navigation.jsx';
 import Home from './components/Home.jsx';
 import Events from './components/Events.jsx';
 import Search from './components/Search.jsx';
@@ -12,7 +12,7 @@ import Footer from './components/Footer.jsx';
 function App() {
     return (
         <div className="app-container">
-            <Header />
+            <Navigation />
 
             <div className="content-wrapper">
                 <Routes>

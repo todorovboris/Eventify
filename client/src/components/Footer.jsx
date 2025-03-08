@@ -12,9 +12,8 @@ export default function Footer() {
                     Profile
                 </a>
             </nav>
-            <hr />
 
-            <p>&copy; {new Date().getFullYear()} Eventify. All rights reserved.</p>
+            <p>&copy; Copyright - Eventify {new Date().getFullYear()} </p>
         </footer>
     );
 }
