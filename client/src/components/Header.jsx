@@ -1,38 +1,40 @@
+import { Link } from 'react-router';
+
 export default function Header() {
     return (
         <header>
             <div className="header-container">
                 <div className="logo">
-                    <a href="/">
+                    <Link to="/">
                         <img src="/images/LogoTextBig.jpeg" alt="Eventify" />
                         {/* <img src="/images/logo_img.jpg" alt="Eventify" className="logo_img" /> */}
                         {/* <img src="/images/logo_text.jpg" alt="Eventify" className="logo_text" /> */}
-                    </a>
+                    </Link>
                 </div>
                 <nav>
                     <ul className="nav-links">
                         <li>
-                            <a href="/events">Events</a>
+                            <Link to="/events">Events</Link>
                         </li>
                         <li>
-                            <a href="/events">Artists</a>
+                            <Link to="/events">Artists</Link>
                         </li>
                         <li>
-                            <a href="/profile">Profile</a>
+                            <Link to="/profile">Profile</Link>
                         </li>
                         <li>
-                            <a href="/search">Search</a>
+                            <Link to="/search">Search</Link>
                         </li>
                     </ul>
                     <ul className="nav-auth">
                         <li>
-                            <a href="/login">Login</a>
+                            <Link to="/login">Login</Link>
                         </li>
                         <li>
-                            <a href="/register">Register</a>
+                            <Link to="/register">Register</Link>
                         </li>
                         <li>
-                            <a href="/logout">Logout</a>
+                            <Link to="/logout">Logout</Link>
                         </li>
                     </ul>
                 </nav>
