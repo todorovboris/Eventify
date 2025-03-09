@@ -25,9 +25,10 @@ header {
 
 /* Лого */
 .logo img {
-    height: 100px;
+    height: 110px;
     width: auto;
     transform: scale(1.25);
+    /* padding-left: 20px; */
 }
 
 .logo_img {
@@ -63,7 +64,7 @@ nav {
     left: 50%;
     transform: translateX(-63%); /* Центрира спрямо средата на страницата */
     display: flex;
-    gap: 40px;
+    gap: 70px;
 }
 
 /* Навигация вдясно */
