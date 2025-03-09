@@ -3,7 +3,7 @@ export default function Home() {
         <div className="home-page">
             <>
                 <section className="hero">
-                    <h1>Discover. Organize. Survive.</h1>
+                    <h1>Find it. Join it. Live it.</h1>
                     <p>The best place to create and participate in events.</p>
                     <div className="search-box">
                         <input type="text" placeholder="Search for events..." className="search-input" />
