@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 export default function Login() {
     return (
         <div className="login-container">
@@ -10,7 +12,7 @@ export default function Login() {
                 </button>
             </form>
             {/* <a href="#">Forgot password?</a> */}
-            <a href="/register">Don't have an account? Sign up</a>
+            <Link to="/register">Don't have an account? Sign up</Link>
         </div>
     );
 }

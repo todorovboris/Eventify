@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+
 export default function Register() {
     return (
         <div className="register-container">
@@ -11,7 +13,7 @@ export default function Register() {
                 </button>
             </form>
             {/* <a href="#">Forgot password?</a> */}
-            <a href="/login">Already registered? Log in</a>
+            <Link to="/login">Already registered? Log in</Link>
         </div>
     );
 }

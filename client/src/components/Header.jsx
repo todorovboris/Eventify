@@ -20,10 +20,10 @@ export default function Header() {
                             <Link to="/events">Artists</Link>
                         </li>
                         <li>
-                            <Link to="/profile">Profile</Link>
+                            <Link to="/search">Search</Link>
                         </li>
                         <li>
-                            <Link to="/search">Search</Link>
+                            <Link to="/profile">Profile</Link>
                         </li>
                     </ul>
                     <ul className="nav-auth">
