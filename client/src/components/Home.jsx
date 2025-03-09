@@ -5,13 +5,9 @@ export default function Home() {
                 <section className="hero">
                     <h1>Discover. Organize. Survive.</h1>
                     <p>The best place to create and participate in events.</p>
-                    <div className="hero-buttons">
-                        <a href="/events" className="btn">
-                            Search for event
-                        </a>
-                        {/* <a href="/create-event" className="btn secondary">
-                            Create event
-                        </a> */}
+                    <div className="search-box">
+                        <input type="text" placeholder="Search for events..." className="search-input" />
+                        <button className="search-btn">Search</button>
                     </div>
                 </section>
 

@@ -1,115 +1,94 @@
+/* Универсални стилизации */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Хедър */
 header {
+    width: 100%;
     background: white;
-    color: white;
-    padding: 0px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Този стил не се променя, защото подравнява елементите вертикално */
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0px solid #ddd;
+    position: relative; /* За да работи absolute позиционирането на nav-links */
 }
 
-nav {
-    flex-grow: 1;
-    display: flex;
-    align-items: center; /* Това ще подравни навигацията по горния ръб */
-    justify-content: center; /* Центрира линковете хоризонтално */
-}
-
+/* Центриране на съдържанието */
 .header-container {
+    width: 100%; /* Или 90% за по-добра адаптивност */
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    padding: 10px 20px;
 }
 
-.logo a {
-    font-size: 28px;
-    font-weight: bold;
-    text-decoration: none;
-    color: linear-gradient(135deg, #3079d8, #892c82); /* Синьо-лилав градиент */
-    transition: color 0.3s ease;
-}
-
-/* .logo a:hover {
-    color: white;
-} */
-
+/* Лого */
 .logo img {
-    height: 120px; /* Променя височината на логото (можеш да настроиш по твое усмотрение) */
-    width: auto; /* Запазва съотношението на страните на изображението */
+    height: 100px;
+    width: auto;
+    transform: scale(1.25);
 }
 
-.nav-links {
-    list-style: none;
+.logo_img {
+    height: 40px;
+    width: auto;
+}
+
+.logo_text {
+    height: 20px;
+    width: auto;
+    transform: scale(0.1);
+}
+
+/* Навигация */
+nav {
     display: flex;
-    justify-content: center; /* Центрира линковете хоризонтално */
-    align-items: center; /* Центрира линковете вертикално */
-    gap: 50px;
-    height: 100%; /* Ако е нужно да се запълни височината на родителския контейнер */
+    align-items: center;
+    width: 100%;
+    position: relative; /* За да позволим абсолютно позициониране */
 }
 
-.nav-links li {
-    font-size: 18px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: linear-gradient(135deg, #3079d8, #892c82); /* Синьо-лилав градиент */
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    font-weight: bold;
-}
-
+/* Навигационни линкове */
+.nav-links,
 .nav-auth {
     list-style: none;
     display: flex;
-    justify-content: right; /* Центрира линковете хоризонтално */
-    align-items: center; /* Центрира линковете вертикално */
-    gap: 50px;
-    height: 100%; /* Ако е нужно да се запълни височината на родителския контейнер */
+    gap: 30px;
 }
 
-.nav-auth li {
-    font-size: 18px;
+/* Центриране на навигационните линкове в средата на страницата */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-63%); /* Центрира спрямо средата на страницата */
+    display: flex;
+    gap: 40px;
 }
 
+/* Навигация вдясно */
+.nav-auth {
+    display: flex;
+    margin-left: auto; /* Избутва елементите вдясно */
+    gap: 15px;
+}
+
+.nav-links a,
 .nav-auth a {
     text-decoration: none;
-    color: linear-gradient(135deg, #3079d8, #892c82); /* Синьо-лилав градиент */
+    color: #3079d8;
+    font-size: 18px;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
+.nav-links a:hover,
 .nav-auth a:hover {
+    color: #892c82; /* Подчертаване при ховър */
     font-weight: bold;
 }
 
-/* Стилове за търсенето */
-.search {
-    display: flex;
-    gap: 10px;
-}
-
-.search input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid black;
-    border-radius: 30px;
-    width: 200px;
-}
-
-.search button {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.search button:hover {
-    background-color: #0d0a39;
+/* Отстраняване на хоризонталното скролиране */
+body {
+    overflow-x: hidden;
 }
