@@ -1,0 +1,30 @@
+{
+    "07f260f4-466c-4607-9a33-f7273b24f1b4": {
+        "_id": "07f260f4-466c-4607-9a33-f7273b24f1b4",
+        "eventName": "Test",
+        "location": "Beroe Stadium",
+        "city": "Stara Zagora",
+        "country": "Bulgaria",
+        "ticketPrice": "100",
+        "capacity": "1000",
+        "eventDate": "2025-11-01T20:00:00.358Z",
+        "imageUrl": "https://d3u845fx6txnqz.cloudfront.net/events/n244-concerts-Robbie-Williams.jpg",
+        "description": "test-test-description",
+        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        "organizer": "Peter"
+    },
+    "d749a819-1e41-4c65-9ce2-7b429c4ebd0d": {
+        "_id": "d749a819-1e41-4c65-9ce2-7b429c4ebd0d",
+        "eventName": "Test2",
+        "location": "Arena Armeec",
+        "city": "Sofia",
+        "country": "Bulgaria",
+        "ticketPrice": "200",
+        "capacity": "500",
+        "eventDate": "2025-12-01T19:30:00.358Z",
+        "imageUrl": "https://d3u845fx6txnqz.cloudfront.net/events/n244-concerts-Robbie-Williams.jpg",
+        "description": "test-test-description",
+        "_ownerId": "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+        "organizer": "Admin"
+    }
+}
