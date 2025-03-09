@@ -34,7 +34,7 @@ export default function Home() {
                     <div className="category-list">
                         <div className="category">Music</div>
                         <div className="category">Technologies</div>
-                        <div className="category">Bussines</div>
+                        <div className="category">Business</div>
                         <div className="category">Sport</div>
                     </div>
                 </section>
