@@ -60,8 +60,8 @@
 .search-btn {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: #3079d8;
-    color: white;
+    background-color: #548edc;
+    color: black;
     border: none;
     border-radius: 0 25px 25px 0;
     cursor: pointer;
@@ -102,7 +102,7 @@
 }
 
 .category {
-    background: #ffcc00;
-    color: black;
+    background: #548edc;
+    color: white;
     font-weight: bold;
 }
