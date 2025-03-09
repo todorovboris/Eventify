@@ -15,6 +15,9 @@ export default function Header() {
                             <a href="/events">Events</a>
                         </li>
                         <li>
+                            <a href="/events">Artists</a>
+                        </li>
+                        <li>
                             <a href="/profile">Profile</a>
                         </li>
                         <li>
