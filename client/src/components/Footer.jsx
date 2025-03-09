@@ -15,6 +15,11 @@ export default function Footer() {
                             More information
                         </a>
                     </p>
+                    <p>
+                        <a href="/search" className="footer-button">
+                            Search event
+                        </a>
+                    </p>
                 </div>
                 <div className="footer-section">
                     <h3>Information</h3>
