@@ -85,8 +85,12 @@ nav {
 
 .nav-links a:hover,
 .nav-auth a:hover {
-    color: #892c82; /* Подчертаване при ховър */
-    font-weight: bold;
+    background-color: #548edc;
+    color: white; /* Подчертаване при ховър */
+    /* font-weight: bold; */
+    padding: 5px 5px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease; /* Анимация при ховър */
 }
 
 /* Отстраняване на хоризонталното скролиране */

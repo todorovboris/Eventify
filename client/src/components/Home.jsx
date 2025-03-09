@@ -32,20 +32,20 @@ export default function Home() {
                 <section className="categories">
                     <h2>CATEGORIES</h2>
                     <div className="category-list">
-                        <div className="category">Музика</div>
-                        <div className="category">Технологии</div>
-                        <div className="category">Бизнес</div>
-                        <div className="category">Спорт</div>
+                        <div className="category">Music</div>
+                        <div className="category">Technologies</div>
+                        <div className="category">Bussines</div>
+                        <div className="category">Sport</div>
                     </div>
                 </section>
 
                 <section className="how-it-works">
                     <h2>How it works?</h2>
                     <div className="steps">
-                        <div className="step">🔍 Разгледай събития</div>
-                        <div className="step">📝 Регистрирай се</div>
-                        <div className="step">🎟️ Създай свое събитие</div>
-                        <div className="step">🤝 Свържи се с хора</div>
+                        <div className="step">🔍 Browse events</div>
+                        <div className="step">📝 Register</div>
+                        <div className="step">🎟️ Create your own event</div>
+                        <div className="step">🤝 Connect with people</div>
                     </div>
                 </section>
             </>
