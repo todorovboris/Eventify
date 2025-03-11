@@ -7,8 +7,11 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 100px 550px;
+    width: 350px; /* Фиксирана ширина */
+    max-width: 90%; /* За да е адаптивно на по-малки екрани */
+    margin: 100px auto; /* Центрира хоризонтално */
 }
+
 .login-container h2 {
     margin-bottom: 20px;
 }
