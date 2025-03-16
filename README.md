@@ -59,7 +59,7 @@ The project is divided into the following folders:
 
 2. Navigate to the project directory:
    ```bash
-   cd Eventify
+   cd Eventify/client
 
 3. Install dependencies:
    ```bash
@@ -67,9 +67,9 @@ The project is divided into the following folders:
 
 4. Start the development server:
    ```bash
-   npm start
+   npm run dev
 
-5. The app will run at http://localhost:3000
+5. The app will run at http://localhost:5173
 
 
 ## Contact
