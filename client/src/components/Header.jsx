@@ -1,14 +1,24 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router';
+// import './Header.css'; // Можете да създадете отделен CSS файл за стилове
 
 export default function Header() {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsDropdownOpen(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDropdownOpen(false);
+    };
+
     return (
         <header>
             <div className="header-container">
                 <div className="logo">
                     <Link to="/">
                         <img src="/images/LogoTextBig.jpeg" alt="Eventify" />
-                        {/* <img src="/images/logo_img.jpg" alt="Eventify" className="logo_img" /> */}
-                        {/* <img src="/images/logo_text.jpg" alt="Eventify" className="logo_text" /> */}
                     </Link>
                 </div>
                 <nav>
@@ -17,24 +27,32 @@ export default function Header() {
                             <Link to="/events">Events</Link>
                         </li>
                         <li>
-                            <Link to="/events">Artists</Link>
+                            <Link to="/artists">Artists</Link>
                         </li>
                         <li>
                             <Link to="/search">Search</Link>
                         </li>
-                        <li>
-                            <Link to="/profile">Profile</Link>
-                        </li>
                     </ul>
                     <ul className="nav-auth">
-                        <li>
-                            <Link to="/login">Login</Link>
-                        </li>
-                        <li>
-                            <Link to="/register">Register</Link>
-                        </li>
-                        <li>
-                            <Link to="/logout">Logout</Link>
+                        <li className="profile-dropdown-container" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            {/* <Link to="/profile"></Link> */}
+                            <img className="profile-logo" src="/images/profile_logo2.png" alt="Profile" />
+                            {isDropdownOpen && (
+                                <ul className="dropdown-menu">
+                                    <li>
+                                        <Link to="/profile">Profile</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/login">Login</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/register">Register</Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/logout">Logout</Link>
+                                    </li>
+                                </ul>
+                            )}
                         </li>
                     </ul>
                 </nav>
@@ -42,3 +60,50 @@ export default function Header() {
         </header>
     );
 }
+
+// import { Link } from 'react-router';
+
+// export default function Header() {
+//     return (
+//         <header>
+//             <div className="header-container">
+//                 <div className="logo">
+//                     <Link to="/">
+//                         <img src="/images/LogoTextBig.jpeg" alt="Eventify" />
+//                         {/* <img src="/images/logo_img.jpg" alt="Eventify" className="logo_img" /> */}
+//                         {/* <img src="/images/logo_text.jpg" alt="Eventify" className="logo_text" /> */}
+//                     </Link>
+//                 </div>
+//                 <nav>
+//                     <ul className="nav-links">
+//                         <li>
+//                             <Link to="/events">Events</Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/events">Artists</Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/search">Search</Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/profile">
+//                                 <img className="profile-logo" src="/images/profile_logo2.png" alt="Profile" />
+//                             </Link>
+//                         </li>
+//                     </ul>
+//                     <ul className="nav-auth">
+//                         <li>
+//                             <Link to="/login">Login</Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/register">Register</Link>
+//                         </li>
+//                         <li>
+//                             <Link to="/logout">Logout</Link>
+//                         </li>
+//                     </ul>
+//                 </nav>
+//             </div>
+//         </header>
+//     );
+// }

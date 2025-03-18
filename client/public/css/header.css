@@ -50,7 +50,6 @@ nav {
     position: relative; /* За да позволим абсолютно позициониране */
 }
 
-/* Навигационни линкове */
 .nav-links,
 .nav-auth {
     list-style: none;
@@ -62,15 +61,16 @@ nav {
 .nav-links {
     position: absolute;
     left: 50%;
-    transform: translateX(-63%); /* Центрира спрямо средата на страницата */
+    transform: translateX(-66%); /* Центрира спрямо средата на страницата */
     display: flex;
     gap: 80px;
 }
 
-/* Навигация вдясно */
 .nav-auth {
     display: flex;
     margin-left: auto; /* Избутва елементите вдясно */
+    margin-right: 25px; /* Избутва елементите вдясно */
+    /* left: -1em; */
     gap: 15px;
 }
 
@@ -85,9 +85,10 @@ nav {
 
 .nav-links a:hover,
 .nav-auth a:hover {
-    background-color: #548edc;
-    color: white; /* Подчертаване при ховър */
-    /* font-weight: bold; */
+    /* background-color: #548edc; */
+    /* color: white; */
+    color: #548edc;
+    font-weight: bold;
     padding: 5px 5px;
     border-radius: 10px;
     transition: background-color 0.3s ease; /* Анимация при ховър */
@@ -96,4 +97,18 @@ nav {
 /* Отстраняване на хоризонталното скролиране */
 body {
     overflow-x: hidden;
+}
+
+.profile-logo {
+    width: 40px; /* Можеш да намалиш още, ако е нужно */
+    height: 40px;
+    border-radius: 50%; /* За кръгла форма */
+    object-fit: cover; /* Запазва правилните пропорции */
+}
+
+.profile-logo:hover {
+    width: 40px; /* Можеш да намалиш още, ако е нужно */
+    height: 40px;
+    border-radius: 50%; /* За кръгла форма */
+    object-fit: cover; /* Запазва правилните пропорции */
 }
