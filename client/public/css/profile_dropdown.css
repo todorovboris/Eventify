@@ -31,13 +31,16 @@
 
 .dropdown-menu li a {
     text-decoration: none;
-    color: #333;
     color: #548edc;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
     display: block;
-    transition: background-color 0.3s ease; /* Добавяме плавен преход при ховър */
+    border-radius: 10px;
 }
 
 .dropdown-menu li a:hover {
     background-color: rgba(221, 221, 221, 0.7); /* По-леко потъмняване при ховър */
+    transition: background-color 0.3s ease; /* Добавяме плавен преход при ховър */
     /* font-weight: bold; */
 }

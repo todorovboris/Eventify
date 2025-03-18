@@ -5,7 +5,7 @@ export default function Register() {
         <div className="register-container">
             <h2>Register</h2>
             <form>
-                <input type="email" placeholder="Email..." name="email" required />
+                <input type="email" placeholder="Email" name="email" required />
                 <input type="password" placeholder="Password" name="password" required />
                 <input type="password" placeholder="Repeat Password" name="rePassword" required />
                 <button type="submit" className="register-btn">

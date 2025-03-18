@@ -74,8 +74,7 @@ nav {
     gap: 15px;
 }
 
-.nav-links a,
-.nav-auth a {
+.nav-links a {
     text-decoration: none;
     color: #548edc;
     font-size: 18px;
@@ -83,8 +82,7 @@ nav {
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-auth a:hover {
+.nav-links a:hover {
     /* background-color: #548edc; */
     /* color: white; */
     color: #548edc;
