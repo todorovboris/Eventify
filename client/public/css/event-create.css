@@ -1,0 +1,76 @@
+.create-event-form-container {
+    max-width: 600px;
+    margin: 50px auto; /* Центрира хоризонтално */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    background-color: rgb(255, 255, 255, 0.8); /* Добавяме прозрачност (алфа канал) */
+    /* background-color: rgba(249, 249, 249, 0.8); /* Добавяме прозрачност (алфа канал) */
+    border: 1px solid rgba(204, 204, 204, 0.5); /* Прозрачна граница */
+}
+
+.create-event-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type='text'],
+.form-group input[type='date'],
+.form-group input[type='time'],
+.form-group select,
+.form-group textarea,
+.form-group input[type='file'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group select {
+    appearance: none; /* Премахва стандартните стрелки на select елемента */
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%23343a40" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 1em;
+    padding-right: 2.5em;
+}
+
+button[type='submit'] {
+    background-color: #548edc;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+button[type='submit']:hover {
+    background-color: #3d75c2;
+}
+
+.form-group p {
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 5px;
+}
