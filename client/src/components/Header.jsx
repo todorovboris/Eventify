@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router';
-// import './Header.css'; // Можете да създадете отделен CSS файл за стилове
 
 export default function Header() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);

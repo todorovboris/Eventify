@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Хедър */
 header {
     width: 100%;
     background: white;
@@ -13,7 +12,6 @@ header {
     position: relative; /* За да работи absolute позиционирането на nav-links */
 }
 
-/* Центриране на съдържанието */
 .header-container {
     width: 100%; /* Или 90% за по-добра адаптивност */
     margin: 0 auto;
@@ -23,7 +21,6 @@ header {
     padding: 10px 20px;
 }
 
-/* Лого */
 .logo img {
     height: 110px;
     width: auto;
@@ -42,7 +39,6 @@ header {
     transform: scale(0.1);
 }
 
-/* Навигация */
 nav {
     display: flex;
     align-items: center;
@@ -50,28 +46,14 @@ nav {
     position: relative; /* За да позволим абсолютно позициониране */
 }
 
-.nav-links,
-.nav-auth {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-
 /* Центриране на навигационните линкове в средата на страницата */
 .nav-links {
+    list-style: none;
     position: absolute;
     left: 50%;
     transform: translateX(-66%); /* Центрира спрямо средата на страницата */
     display: flex;
     gap: 80px;
-}
-
-.nav-auth {
-    display: flex;
-    margin-left: auto; /* Избутва елементите вдясно */
-    margin-right: 25px; /* Избутва елементите вдясно */
-    /* left: -1em; */
-    gap: 15px;
 }
 
 .nav-links a {
@@ -85,12 +67,23 @@ nav {
 
 .nav-links a:hover {
     /* background-color: #548edc; */
+    background-color: rgba(221, 221, 221, 0.7);
     /* color: white; */
+
+    /* font-weight: bold; */
     color: #548edc;
-    font-weight: bold;
     padding: 5px 5px;
     border-radius: 10px;
-    transition: background-color 0.3s ease; /* Анимация при ховър */
+    transition: background-color 0.3s ease;
+}
+
+.nav-auth {
+    list-style: none;
+    display: flex;
+    margin-left: auto; /* Избутва елементите вдясно */
+    margin-right: 25px; /* Избутва елементите вдясно */
+    left: -1em;
+    gap: 15px;
 }
 
 /* Отстраняване на хоризонталното скролиране */
@@ -99,14 +92,14 @@ body {
 }
 
 .profile-logo {
-    width: 40px; /* Можеш да намалиш още, ако е нужно */
+    width: 40px;
     height: 40px;
     border-radius: 50%; /* За кръгла форма */
     object-fit: cover; /* Запазва правилните пропорции */
 }
 
 .profile-logo:hover {
-    width: 40px; /* Можеш да намалиш още, ако е нужно */
+    width: 40px;
     height: 40px;
     border-radius: 50%; /* За кръгла форма */
     object-fit: cover; /* Запазва правилните пропорции */
