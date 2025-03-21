@@ -41,18 +41,25 @@ export default function Header() {
                             <img className="profile-logo" src="/images/profile_logo2.png" alt="Profile" />
                             {isDropdownOpen && (
                                 <ul className="dropdown-menu">
-                                    <li>
-                                        <Link to="/profile">{username}</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/login">Login</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/register">Register</Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/logout">Logout</Link>
-                                    </li>
+                                    {username ? (
+                                        <>
+                                            <li>
+                                                <Link to="/profile">{username}</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/logout">Logout</Link>
+                                            </li>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <li>
+                                                <Link to="/login">Login</Link>
+                                            </li>
+                                            <li>
+                                                <Link to="/register">Register</Link>
+                                            </li>
+                                        </>
+                                    )}
                                 </ul>
                             )}
                         </li>
