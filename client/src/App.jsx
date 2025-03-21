@@ -2,13 +2,13 @@ import { Routes, Route, Router } from 'react-router';
 
 import Header from './components/header/Header.jsx';
 import Home from './components/home/Home.jsx';
-import Events from './components/Events.jsx';
-import Search from './components/Search.jsx';
+import Events from './components/events-catalog/Events.jsx';
+import Search from './components/search/Search.jsx';
 import UserProfile from './components/user-profile/UserProfile.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
 import Footer from './components/footer/Footer.jsx';
-import EventCreate from './components/EventCreate.jsx';
+import EventCreate from './components/event-create/EventCreate.jsx';
 
 function App() {
     return (
