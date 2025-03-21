@@ -1,9 +1,11 @@
 import { Link } from 'react-router';
 import categoryOptions from '../../helpers/categoryOptions.js';
+import { useLatestEvents } from '../../api/eventsApi.js';
 
 export default function Home() {
     const categories = categoryOptions();
-    // console.log(category);
+    const { latestEvents } = useLatestEvents();
+    console.log(latestEvents);
 
     return (
         <div className="home-page">
@@ -14,24 +16,6 @@ export default function Home() {
                     <div className="search-box">
                         <input type="text" placeholder="Search for events..." className="search-input" />
                         <button className="search-btn">Search</button>
-                    </div>
-                </section>
-
-                <section className="events">
-                    <h2>LATEST EVENTS</h2>
-                    <div className="event-list">
-                        <div className="event-card">
-                            <h3>Tech Summit 2025</h3> <p>София, 12 Юни</p>
-                        </div>
-                        <div className="event-card">
-                            <h3>Music Fest</h3> <p>Пловдив, 5 Юли</p>
-                        </div>
-                        <div className="event-card">
-                            <h3>Startup Weekend</h3> <p>Варна, 20 Август</p>
-                        </div>
-                        <div className="event-card">
-                            <h3>Art Expo</h3> <p>Бургас, 3 Септември</p>
-                        </div>
                     </div>
                 </section>
 
@@ -47,6 +31,19 @@ export default function Home() {
                         <div className="category">Technologies</div>
                         <div className="category">Business</div>
                         <div className="category">Sport</div> */}
+                    </div>
+                </section>
+
+                <section className="events">
+                    <h2>LATEST EVENTS</h2>
+                    <div className="event-list">
+                        <div className="event-card">
+                            <img src="/images/tech_summit.jpg" alt="Tech Summit" className="event-image" />
+                            <div className="event-info">
+                                <h3>Tech Summit 2025</h3>
+                                <p>София, 12 Юни</p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
