@@ -12,6 +12,7 @@ import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
 import Footer from './components/footer/Footer.jsx';
 import EventCreate from './components/event-create/EventCreate.jsx';
+import Logout from './components/logout/Logout.jsx';
 
 function App() {
     const [authData, setAuthData] = useState({});
@@ -32,12 +33,13 @@ function App() {
                 <div className="content-wrapper">
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/events" element={<Events />} />
-                        <Route path="/events/create" element={<EventCreate />} />
-                        <Route path="/search" element={<Search />} />
-                        <Route path="/profile" element={<UserProfile />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
+                        <Route path="/logout" element={<Logout />} />
+                        <Route path="/profile" element={<UserProfile />} />
+                        <Route path="/search" element={<Search />} />
+                        <Route path="/events" element={<Events />} />
+                        <Route path="/events/create" element={<EventCreate />} />
                     </Routes>
                 </div>
 
