@@ -50,6 +50,11 @@ function EventCreate() {
                 </div>
 
                 <div className="form-group">
+                    <label htmlFor="capacity">Max Capacity:</label>
+                    <input name="capacity" type="number" id="capacity" defaultValue="" />
+                </div>
+
+                <div className="form-group">
                     <label htmlFor="image">Image:</label>
                     <input name="imageUrl" type="text" id="image" accept="image/*" placeholder="https://..." />
                     {/* <input type="file" id="image" accept="image/*" onChange={handleImageChange} /> */}
