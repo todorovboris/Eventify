@@ -5,7 +5,6 @@ import { useLatestEvents } from '../../api/eventsApi.js';
 export default function Home() {
     const categories = categoryOptions();
     const { latestEvents } = useLatestEvents();
-    console.log(latestEvents);
 
     return (
         <div className="home-page">
@@ -37,13 +36,17 @@ export default function Home() {
                 <section className="events">
                     <h2>LATEST EVENTS</h2>
                     <div className="event-list">
-                        <div className="event-card">
-                            <img src="/images/tech_summit.jpg" alt="Tech Summit" className="event-image" />
-                            <div className="event-info">
-                                <h3>Tech Summit 2025</h3>
-                                <p>София, 12 Юни</p>
+                        {latestEvents.map((event) => (
+                            <div className="event-card">
+                                <img src={event.imageUrl} alt={event.title} className="event-image" />
+                                <div className="event-info">
+                                    <h3>{event.title}</h3>
+                                    <p>
+                                        {event.location}, {event.date}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        ))}
                     </div>
                 </section>
 
