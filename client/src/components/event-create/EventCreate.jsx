@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
+import { useEventCreate } from '../../api/eventsApi.js';
+import { useNavigate } from 'react-router';
 
 function EventCreate() {
-    const createEventHandler = (formData) => {
-        console.log('Event:', Object.fromEntries(formData));
+    const navigate = useNavigate();
+    const { createEvent } = useEventCreate();
+
+    const createEventHandler = async (formData) => {
+        const eventData = Object.fromEntries(formData);
+
+        await createEvent(eventData);
+
+        navigate('/');
     };
 
     return (
