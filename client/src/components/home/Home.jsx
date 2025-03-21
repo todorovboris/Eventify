@@ -37,7 +37,7 @@ export default function Home() {
                     <h2>LATEST EVENTS</h2>
                     <div className="event-list">
                         {latestEvents.map((event) => (
-                            <div className="event-card">
+                            <Link to={`/events/${event._id}/details`} className="event-card" key={event._id}>
                                 <img src={event.imageUrl} alt={event.title} className="event-image" />
                                 <div className="event-info">
                                     <h3>{event.title}</h3>
@@ -45,7 +45,7 @@ export default function Home() {
                                         {event.location}, {event.date}
                                     </p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
                 </section>

@@ -1,0 +1,118 @@
+.event-details-container {
+    max-width: 900px; /* Леко увеличен */
+    margin: 60px auto; /* Повече отстояние отгоре и отдолу */
+    padding: 30px; /* Повече вътрешно отстояние */
+    background: #f9f9f9; /* По-светъл фон */
+    border-radius: 12px;
+    /* По-фина сянка или премахване */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Подравняване на текста вляво за по-четлив вид */
+}
+
+.event-header {
+    position: relative;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    margin-bottom: 20px; /* Отстояние от долния елемент */
+}
+
+.event-details-image {
+    width: 100%;
+    height: auto; /* Автоматична височина за запазване на пропорциите */
+    aspect-ratio: 16 / 9; /* Съотношение на страните */
+    object-fit: contain;
+    border-radius: 12px 12px 0 0;
+    transition: transform 0.3s ease-in-out; /* Пример за hover ефект */
+}
+
+.event-details-image:hover {
+    transform: scale(1.05);
+}
+
+.event-details-info {
+    padding: 25px 0; /* Повече вертикално отстояние */
+}
+
+.event-details-info h1 {
+    font-size: 32px; /* По-голям шрифт */
+    color: #222; /* По-тъмен цвят */
+    margin-bottom: 15px;
+    font-weight: 700; /* По-наситен шрифт */
+}
+
+.event-meta {
+    font-size: 18px; /* По-голям шрифт */
+    color: #555;
+    margin-top: 20px;
+    /* margin-bottom: 10px; */
+    display: flex; /* Подреждане в един ред */
+    gap: 15px; /* Разстояние между елементите */
+    align-items: center; /* Вертикално центриране */
+}
+
+.event-meta svg {
+    /* Ако използвате икони */
+    width: 20px;
+    height: 20px;
+    fill: #888;
+}
+
+.event-details-description {
+    font-size: 20px; /* По-голям шрифт */
+    color: #333;
+    line-height: 1.7;
+    padding: 25px 0;
+    border-top: 1px solid #eee; /* Добавяне на разделителна линия */
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.event-register-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px; /* По-голям бутон */
+    background: #548edc; /* По-ярък син цвят */
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px; /* По-заоблени ъгли */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease-in-out; /* Добавяне на трансформация */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Добавяне на фина сянка */
+}
+
+.event-register-btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px); /* Леко повдигане при hover */
+}
+
+.event-register-btn:active {
+    transform: translateY(0); /* Връщане в изходно положение при клик */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.event-register-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+/* Допълнителни стилове за по-голям екран (пример) */
+@media (min-width: 768px) {
+    .event-details-container {
+        padding: 40px;
+    }
+
+    .event-details-info h1 {
+        font-size: 38px;
+    }
+
+    .event-meta {
+        font-size: 20px;
+    }
+
+    .event-details-description {
+        font-size: 22px;
+    }
+}

@@ -13,6 +13,7 @@ import Register from './components/register/Register.jsx';
 import Footer from './components/footer/Footer.jsx';
 import EventCreate from './components/event-create/EventCreate.jsx';
 import Logout from './components/logout/Logout.jsx';
+import EventDetails from './components/event-details/EventDetails.jsx';
 
 function App() {
     const [authData, setAuthData] = useState({});
@@ -40,6 +41,7 @@ function App() {
                         <Route path="/search" element={<Search />} />
                         <Route path="/events" element={<Events />} />
                         <Route path="/events/create" element={<EventCreate />} />
+                        <Route path="/events/:eventId/details" element={<EventDetails />} />
                     </Routes>
                 </div>
 
