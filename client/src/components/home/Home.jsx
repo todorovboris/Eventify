@@ -1,6 +1,10 @@
 import { Link } from 'react-router';
+import categoryOptions from '../../helpers/categoryOptions.js';
 
 export default function Home() {
+    const categories = categoryOptions();
+    // console.log(category);
+
     return (
         <div className="home-page">
             <>
@@ -14,7 +18,7 @@ export default function Home() {
                 </section>
 
                 <section className="events">
-                    <h2>TOP EVENTS</h2>
+                    <h2>LATEST EVENTS</h2>
                     <div className="event-list">
                         <div className="event-card">
                             <h3>Tech Summit 2025</h3> <p>София, 12 Юни</p>
@@ -34,10 +38,15 @@ export default function Home() {
                 <section className="categories">
                     <h2>CATEGORIES</h2>
                     <div className="category-list">
-                        <div className="category">Music</div>
+                        {categories.map((category) => (
+                            <div className="category" key={category.label}>
+                                {category.label}
+                            </div>
+                        ))}
+                        {/* <div className="category">Music</div>
                         <div className="category">Technologies</div>
                         <div className="category">Business</div>
-                        <div className="category">Sport</div>
+                        <div className="category">Sport</div> */}
                     </div>
                 </section>
 
