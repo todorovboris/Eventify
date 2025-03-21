@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 
-export default function Profile() {
+export default function UserProfile() {
     return (
         <div className="profile-container">
             <div className="profile-card">
