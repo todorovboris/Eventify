@@ -9,3 +9,11 @@ export const useLogin = () => {
 
     return { login };
 };
+
+export const useRegister = () => {
+    const register = async (email, username, password) => {
+        return request.post(`${baseUrl}/register`, { email, username, password });
+    };
+
+    return { register };
+};
