@@ -50,11 +50,11 @@ function EventCreate() {
                         <option value="" disabled>
                             Choose category
                         </option>
-                        <option value="music">Music</option>
-                        <option value="sports">Sport</option>
-                        <option value="arts">Arts</option>
-                        <option value="conference">Conference</option>
-                        <option value="other">Other</option>
+                        <option value="Music">Music</option>
+                        <option value="Sports">Sport</option>
+                        <option value="Arts">Arts</option>
+                        <option value="Conference">Conference</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
 
