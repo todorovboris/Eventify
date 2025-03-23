@@ -116,3 +116,64 @@
         font-size: 22px;
     }
 }
+
+/* Контейнер за бутоните */
+.event-actions {
+    display: flex;
+    justify-content: flex-start; /* Започват отляво */
+    align-items: center; /* Вертикално центриране */
+    margin-top: 20px;
+    padding: 0 20px; /* Добавете малко странично отстояние */
+    gap: 15px; /* Разстояние между бутоните */
+}
+
+/* Стил за бутона за редактиране */
+.event-edit-btn {
+    padding: 14px 28px; /* По-голям бутон */
+    background: #548edc; /* По-ярък син цвят */
+    margin-top: 25px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: auto; /* Избутва бутоните за редактиране и изтриване вдясно */
+}
+
+.event-edit-btn:hover {
+    background-color: #1e7e34;
+}
+
+/* Стил за бутона за изтриване */
+.event-delete-btn {
+    padding: 14px 28px; /* По-голям бутон */
+    background: #548edc; /* По-ярък син цвят */
+    margin-top: 25px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.event-delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Подравняване на бутоните при по-малки екрани (ако е необходимо) */
+@media (max-width: 576px) {
+    .event-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .event-register-btn,
+    .event-edit-btn,
+    .event-delete-btn {
+        width: 100%;
+        margin-left: 0; /* Премахване на margin-left за пълна ширина */
+    }
+}

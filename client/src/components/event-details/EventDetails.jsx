@@ -31,13 +31,31 @@ export default function EventDetails() {
                 <h3>Description</h3>
                 <p>{event.description}</p>
             </div>
-            {isSoldOut ? (
+
+            <div className="event-actions">
+                {isSoldOut ? (
+                    <button className="event-register-btn" disabled>
+                        SOLD OUT
+                    </button>
+                ) : (
+                    <button className="event-register-btn">Buy Ticket</button>
+                )}
+                <button className="event-edit-btn">Edit</button>
+                <button className="event-delete-btn">Delete</button>
+            </div>
+
+            {/* {isSoldOut ? (
                 <button className="event-register-btn" disabled>
                     SOLD OUT
                 </button>
             ) : (
                 <button className="event-register-btn">Buy Ticket</button>
             )}
+
+            <div className="event-actions">
+                <button className="event-edit-btn">Edit</button>
+                <button className="event-delete-btn">Delete</button>
+            </div> */}
         </div>
     );
 }

@@ -14,6 +14,16 @@ export const useOneEvent = (eventId) => {
     return { event };
 };
 
+export const useAllEvents = () => {
+    const [events, setEvents] = useState([]);
+
+    useEffect(() => {
+        request.get(baseUrl).then(setEvents);
+    }, []);
+
+    return { events };
+};
+
 export const useLatestEvents = () => {
     const [latestEvents, setLatestEvents] = useState([]);
 
