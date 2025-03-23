@@ -1,12 +1,15 @@
-import { Link, useParams } from 'react-router';
+import { Link, useNavigate, useParams } from 'react-router';
 import { useOneEvent } from '../../api/eventsApi.js';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext.js';
+import { useEventAttend } from '../../api/tickets.js';
 
 export default function EventDetails() {
+    const navigate = useNavigate();
     const { eventId } = useParams();
     const { event } = useOneEvent(eventId);
     const { _id: userId } = useContext(UserContext);
+    const { buyTicket } = useEventAttend();
 
     if (!event) {
         return <p>Loading...</p>;
@@ -20,6 +23,26 @@ export default function EventDetails() {
     if (availableTickets <= 0) {
         isSoldOut = true;
     }
+
+    const buyTicketHandler = async () => {
+        const confirmBuy = confirm(`Are you want to buy a ticket for ${event.title} event?`);
+
+        if (confirmBuy) {
+            let eventAttenders = event.marked;
+            eventAttenders.push(userId);
+
+            const updatedData = {
+                ...event,
+                marked: eventAttenders,
+            };
+
+            await buyTicket(eventId);
+
+            navigate(`/events/${eventId}/details`);
+        }
+
+        return;
+    };
 
     return (
         <div className="event-details-container">
@@ -46,7 +69,9 @@ export default function EventDetails() {
                                 SOLD OUT
                             </button>
                         ) : (
-                            <button className="event-register-btn">Buy Ticket</button>
+                            <button className="event-register-btn" onClick={buyTicketHandler}>
+                                Buy Ticket
+                            </button>
                         )}
                     </>
                 )}
