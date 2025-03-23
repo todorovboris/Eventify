@@ -41,7 +41,8 @@
     font-weight: 700; /* По-наситен шрифт */
 }
 
-.event-meta {
+.event-meta,
+.event-tickets {
     font-size: 18px; /* По-голям шрифт */
     color: #555;
     margin-top: 20px;
@@ -66,6 +67,35 @@
     border-top: 1px solid #eee; /* Добавяне на разделителна линия */
     border-bottom: 1px solid #eee;
     margin-bottom: 20px;
+}
+
+/* Допълнителни стилове за по-голям екран (пример) */
+@media (min-width: 768px) {
+    .event-details-container {
+        padding: 40px;
+    }
+
+    .event-details-info h1 {
+        font-size: 38px;
+    }
+
+    .event-meta,
+    .event-tickets {
+        font-size: 20px;
+    }
+
+    .event-details-description {
+        font-size: 22px;
+    }
+}
+
+.event-actions {
+    display: flex;
+    justify-content: flex-start; /* Започват отляво */
+    align-items: center; /* Вертикално центриране */
+    margin-top: 20px;
+    padding: 0 20px; /* Добавете малко странично отстояние */
+    gap: 15px; /* Разстояние между бутоните */
 }
 
 .event-register-btn {
@@ -98,39 +128,10 @@
     opacity: 1;
 }
 
-/* Допълнителни стилове за по-голям екран (пример) */
-@media (min-width: 768px) {
-    .event-details-container {
-        padding: 40px;
-    }
-
-    .event-details-info h1 {
-        font-size: 38px;
-    }
-
-    .event-meta {
-        font-size: 20px;
-    }
-
-    .event-details-description {
-        font-size: 22px;
-    }
-}
-
-/* Контейнер за бутоните */
-.event-actions {
-    display: flex;
-    justify-content: flex-start; /* Започват отляво */
-    align-items: center; /* Вертикално центриране */
-    margin-top: 20px;
-    padding: 0 20px; /* Добавете малко странично отстояние */
-    gap: 15px; /* Разстояние между бутоните */
-}
-
-/* Стил за бутона за редактиране */
 .event-edit-btn {
     padding: 14px 28px; /* По-голям бутон */
     background: #548edc; /* По-ярък син цвят */
+    text-decoration: none;
     margin-top: 25px;
     color: white;
     border: none;
@@ -166,14 +167,14 @@
 @media (max-width: 576px) {
     .event-actions {
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         gap: 10px;
     }
 
     .event-register-btn,
     .event-edit-btn,
     .event-delete-btn {
-        width: 100%;
+        width: 50%;
         margin-left: 0; /* Премахване на margin-left за пълна ширина */
     }
 }

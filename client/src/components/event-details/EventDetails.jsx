@@ -1,17 +1,23 @@
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import { useOneEvent } from '../../api/eventsApi.js';
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext.js';
 
 export default function EventDetails() {
     const { eventId } = useParams();
     const { event } = useOneEvent(eventId);
+    const { _id: userId } = useContext(UserContext);
 
     if (!event) {
         return <p>Loading...</p>;
     }
 
+    const isOwner = event._ownerId === userId;
+    const availableTickets = event.capacity - event.marked?.length;
+
     let isSoldOut = false;
 
-    if (event.marked?.length >= event.capacity) {
+    if (availableTickets <= 0) {
         isSoldOut = true;
     }
 
@@ -24,7 +30,7 @@ export default function EventDetails() {
                     <p className="event-meta">
                         📍 {event.location} | 📅 {event.date}
                     </p>
-                    {/* <p>Available tickets: {event.}</p> */}
+                    <p className="event-tickets">Available Tickets: {availableTickets}</p>
                 </div>
             </div>
             <div className="event-details-description">
@@ -33,29 +39,26 @@ export default function EventDetails() {
             </div>
 
             <div className="event-actions">
-                {isSoldOut ? (
-                    <button className="event-register-btn" disabled>
-                        SOLD OUT
-                    </button>
-                ) : (
-                    <button className="event-register-btn">Buy Ticket</button>
+                {!isOwner && (
+                    <>
+                        {isSoldOut ? (
+                            <button className="event-register-btn" disabled>
+                                SOLD OUT
+                            </button>
+                        ) : (
+                            <button className="event-register-btn">Buy Ticket</button>
+                        )}
+                    </>
                 )}
-                <button className="event-edit-btn">Edit</button>
-                <button className="event-delete-btn">Delete</button>
+                {isOwner && (
+                    <>
+                        <Link to={`/events/${eventId}/edit`} className="event-edit-btn">
+                            Edit
+                        </Link>
+                        <button className="event-delete-btn">Delete</button>
+                    </>
+                )}
             </div>
-
-            {/* {isSoldOut ? (
-                <button className="event-register-btn" disabled>
-                    SOLD OUT
-                </button>
-            ) : (
-                <button className="event-register-btn">Buy Ticket</button>
-            )}
-
-            <div className="event-actions">
-                <button className="event-edit-btn">Edit</button>
-                <button className="event-delete-btn">Delete</button>
-            </div> */}
         </div>
     );
 }
