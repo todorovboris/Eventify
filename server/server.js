@@ -1358,7 +1358,7 @@
                 location: 'Online',
                 category: 'Other',
                 capacity: 1000,
-                imageUrl: 'https://yt3.googleusercontent.com/ytc/AIdro_nB2zXehyVgKYN1-5k2NECm_leCUnTv8YlHeAQMijra_QQ0=s900-c-k-c0x00ffffff-no-rj',
+                imageUrl: 'https://avatars.githubusercontent.com/u/6661899?s=280&v=4',
                 marked: ['60f0cf0b-34b0-4abd-9769-8c42f830dffc'],
                 _createdOn: 1742575015961,
                 _id: '20494f66-408e-49f0-9504-532376fed635',
