@@ -1357,7 +1357,7 @@
                 time: '09:00',
                 location: 'Online',
                 category: 'Other',
-                capacity: 1000,
+                capacity: 1,
                 imageUrl: 'https://avatars.githubusercontent.com/u/6661899?s=280&v=4',
                 marked: ['60f0cf0b-34b0-4abd-9769-8c42f830dffc'],
                 _createdOn: 1742575015961,
