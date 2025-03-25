@@ -1,11 +1,10 @@
 import { Link, useNavigate } from 'react-router';
-import { useContext } from 'react';
-import { UserContext } from '../../contexts/UserContext.js';
+import { useUserContext } from '../../contexts/UserContext.js';
 import { useLogin } from '../../api/authApi.js';
 
 export default function Login() {
     const navigate = useNavigate();
-    const { userLoginHandler } = useContext(UserContext);
+    const { userLoginHandler } = useUserContext();
     const { login } = useLogin();
 
     const loginHandler = async (formData) => {

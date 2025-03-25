@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router';
-import { UserContext } from '../../contexts/UserContext.js';
+import { UserContext, useUserContext } from '../../contexts/UserContext.js';
 
 export default function Header() {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const { username } = useContext(UserContext);
-
+    const { username } = useUserContext();
     const handleMouseEnter = () => {
         setIsDropdownOpen(true);
     };

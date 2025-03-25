@@ -1,7 +1,4 @@
 import { Routes, Route } from 'react-router';
-import { useState } from 'react';
-
-import { UserContext } from './contexts/UserContext.js';
 
 import Header from './components/header/Header.jsx';
 import Home from './components/home/Home.jsx';
@@ -14,21 +11,11 @@ import Footer from './components/footer/Footer.jsx';
 import EventCreate from './components/event-create/EventCreate.jsx';
 import Logout from './components/logout/Logout.jsx';
 import EventDetails from './components/event-details/EventDetails.jsx';
-import useStorageState from './hooks/useStorageState.js';
+import UserProvider from './components/providers/UserProvider.jsx';
 
 function App() {
-    const [authData, setAuthData] = useStorageState('auth', {});
-
-    const userLoginHandler = (userData) => {
-        setAuthData(userData);
-    };
-
-    const userLogoutHandler = () => {
-        setAuthData({});
-    };
-
     return (
-        <UserContext.Provider value={{ ...authData, userLoginHandler, userLogoutHandler }}>
+        <UserProvider>
             <div className="app-container">
                 <Header />
 
@@ -48,7 +35,7 @@ function App() {
 
                 <Footer />
             </div>
-        </UserContext.Provider>
+        </UserProvider>
     );
 }
 

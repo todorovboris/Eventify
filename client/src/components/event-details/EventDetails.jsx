@@ -1,14 +1,13 @@
 import { Link, useNavigate, useParams } from 'react-router';
 import { useOneEvent } from '../../api/eventsApi.js';
-import { useContext } from 'react';
-import { UserContext } from '../../contexts/UserContext.js';
+import { useUserContext } from '../../contexts/UserContext.js';
 import { useAllTickets, useBuyTicket } from '../../api/ticketsApi.js';
 
 export default function EventDetails() {
     const navigate = useNavigate();
     const { eventId } = useParams();
     const { event } = useOneEvent(eventId);
-    const { _id: userId } = useContext(UserContext);
+    const { _id: userId } = useUserContext();
     const { buyTicket } = useBuyTicket();
 
     //!!
