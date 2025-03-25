@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEventCreate } from '../../api/eventsApi.js';
 import { useNavigate } from 'react-router';
 
-function EventCreate() {
+function EventsCreate() {
     const navigate = useNavigate();
     const { createEvent } = useEventCreate();
 
@@ -76,4 +76,4 @@ function EventCreate() {
     );
 }
 
-export default EventCreate;
+export default EventsCreate;

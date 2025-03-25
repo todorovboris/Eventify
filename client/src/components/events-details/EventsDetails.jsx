@@ -3,7 +3,7 @@ import { useOneEvent } from '../../api/eventsApi.js';
 import { useUserContext } from '../../contexts/UserContext.js';
 import { useAllTickets, useBuyTicket } from '../../api/ticketsApi.js';
 
-export default function EventDetails() {
+export default function EventsDetails() {
     const navigate = useNavigate();
     const { eventId } = useParams();
     const { event } = useOneEvent(eventId);

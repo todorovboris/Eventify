@@ -1,17 +1,19 @@
 import { Routes, Route } from 'react-router';
 
-import Header from './components/header/Header.jsx';
 import Home from './components/home/Home.jsx';
+import Header from './components/header/Header.jsx';
+import Footer from './components/footer/Footer.jsx';
 import Events from './components/events-catalog/Events.jsx';
-import Search from './components/search/Search.jsx';
-import UserProfile from './components/user-profile/UserProfile.jsx';
+import EventsEdit from './components/events-edit/EventsEdit.jsx';
+import EventsCreate from './components/events-create/EventsCreate.jsx';
+import EventsDetails from './components/events-details/EventsDetails.jsx';
 import Login from './components/login/Login.jsx';
 import Register from './components/register/Register.jsx';
-import Footer from './components/footer/Footer.jsx';
-import EventCreate from './components/event-create/EventCreate.jsx';
 import Logout from './components/logout/Logout.jsx';
-import EventDetails from './components/event-details/EventDetails.jsx';
+import Search from './components/search/Search.jsx';
+import UserProfile from './components/user-profile/UserProfile.jsx';
 import UserProvider from './components/providers/UserProvider.jsx';
+import AuthGuard from './components/guards/AuthGuard.jsx';
 
 function App() {
     return (
@@ -22,14 +24,17 @@ function App() {
                 <div className="content-wrapper">
                     <Routes>
                         <Route path="/" element={<Home />} />
+                        <Route path="/events" element={<Events />} />
+                        <Route path="/events/:eventId/details" element={<EventsDetails />} />
+                        <Route element={<AuthGuard />}>
+                            <Route path="/events/:eventId/edit" element={<EventsEdit />} />
+                            <Route path="/events/create" element={<EventsCreate />} />
+                            <Route path="/logout" element={<Logout />} />
+                            <Route path="/profile" element={<UserProfile />} />
+                        </Route>
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
-                        <Route path="/logout" element={<Logout />} />
-                        <Route path="/profile" element={<UserProfile />} />
                         <Route path="/search" element={<Search />} />
-                        <Route path="/events" element={<Events />} />
-                        <Route path="/events/create" element={<EventCreate />} />
-                        <Route path="/events/:eventId/details" element={<EventDetails />} />
                     </Routes>
                 </div>
 
