@@ -5,7 +5,7 @@ import { UserContext } from '../contexts/UserContext.js';
 
 const baseUrl = 'http://localhost:3030/data/tickets';
 
-export const useEventAttend = () => {
+export const useBuyTicket = () => {
     const { request } = useAuth();
 
     const buyTicket = (eventId) => {
@@ -13,4 +13,15 @@ export const useEventAttend = () => {
     };
 
     return { buyTicket };
+};
+
+export const useAllTickets = (eventId) => {
+    const [soldTickets, setSoldTickets] = useState('');
+    const { request } = useAuth();
+
+    useEffect(() => {
+        request.get(`${baseUrl}?where=eventId%3D%22${eventId}%22`).then(setSoldTickets);
+    }, [eventId]);
+
+    return { soldTickets };
 };
