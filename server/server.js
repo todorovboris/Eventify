@@ -1347,7 +1347,7 @@
                     'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPS-fOsHU0fP7GbUUx-JE_WDWbegHUCRYOQtE05tIH6Kncnx934wYLbBKLwJpYri-gZjl-a49NQ1YJb7hMN18K4JyGqjvXn8k_8qJptJ7M9tkk2SXQZQkfN8Q2VbPkMyPqBPtqO-Hw8O8K1rJ0ZUw5kzRpyS2RXqYacwVLm0uvpLGt8qj6qlGebAWu_mA/s1600/champions-league-2025-final-logo%20%281%29.jpg',
                 marked: ['60f0cf0b-34b0-4abd-9769-8c42f830dffc'],
                 _createdOn: 1742574877007,
-                _id: '8cb4c7ba-298b-4bf3-b1b1-d1ba5312f0cb',
+                _id: '0',
             },
             {
                 _ownerId: '60f0cf0b-34b0-4abd-9769-8c42f830dffc',
@@ -1361,9 +1361,52 @@
                 imageUrl: 'https://avatars.githubusercontent.com/u/6661899?s=280&v=4',
                 marked: ['60f0cf0b-34b0-4abd-9769-8c42f830dffc'],
                 _createdOn: 1742575015961,
-                _id: '20494f66-408e-49f0-9504-532376fed635',
+                _id: '1',
             },
         ],
+        tickets: [
+            {
+                _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
+                eventId: '0',
+                _createdOn: 1742763926237,
+                _id: '06daddd8-51c1-4fa6-9b74-2f4490e0294c',
+            },
+        ],
+        comments: {
+            '0a272c58-b7ea-4e09-a000-7ec988248f66': {
+                _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
+                content: 'Great recipe!',
+                recipeId: '8f414b4f-ab39-4d36-bedb-2ad69da9c830',
+                _createdOn: 1614260681375,
+                _id: '0a272c58-b7ea-4e09-a000-7ec988248f66',
+            },
+        },
+        recipes: {
+            '3987279d-0ad4-4afb-8ca9-5b256ae3b298': {
+                _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
+                name: 'Easy Lasagna',
+                img: 'assets/lasagna.jpg',
+                ingredients: ['1 tbsp Ingredient 1', '2 cups Ingredient 2', '500 g  Ingredient 3', '25 g Ingredient 4'],
+                steps: ['Prepare ingredients', 'Mix ingredients', 'Cook until done'],
+                _createdOn: 1613551279012,
+            },
+            '8f414b4f-ab39-4d36-bedb-2ad69da9c830': {
+                _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
+                name: 'Grilled Duck Fillet',
+                img: 'assets/roast.jpg',
+                ingredients: ['500 g  Ingredient 1', '3 tbsp Ingredient 2', '2 cups Ingredient 3'],
+                steps: ['Prepare ingredients', 'Mix ingredients', 'Cook until done'],
+                _createdOn: 1613551344360,
+            },
+            '985d9eab-ad2e-4622-a5c8-116261fb1fd2': {
+                _ownerId: '847ec027-f659-4086-8032-5173e2f9c93a',
+                name: 'Roast Trout',
+                img: 'assets/fish.jpg',
+                ingredients: ['4 cups Ingredient 1', '1 tbsp Ingredient 2', '1 tbsp Ingredient 3', '750 g  Ingredient 4', '25 g Ingredient 5'],
+                steps: ['Prepare ingredients', 'Mix ingredients', 'Cook until done'],
+                _createdOn: 1613551388703,
+            },
+        },
     };
     var rules$1 = {
         users: {

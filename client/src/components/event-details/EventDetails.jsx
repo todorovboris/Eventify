@@ -2,14 +2,18 @@ import { Link, useNavigate, useParams } from 'react-router';
 import { useOneEvent } from '../../api/eventsApi.js';
 import { useContext } from 'react';
 import { UserContext } from '../../contexts/UserContext.js';
-import { useEventAttend } from '../../api/tickets.js';
+import { useAllTickets, useBuyTicket } from '../../api/ticketsApi.js';
 
 export default function EventDetails() {
     const navigate = useNavigate();
     const { eventId } = useParams();
     const { event } = useOneEvent(eventId);
     const { _id: userId } = useContext(UserContext);
-    const { buyTicket } = useEventAttend();
+    const { buyTicket } = useBuyTicket();
+
+    //!!
+    const { soldTickets } = useAllTickets(eventId);
+    console.log(soldTickets);
 
     if (!event) {
         return <p>Loading...</p>;
@@ -26,21 +30,16 @@ export default function EventDetails() {
 
     const buyTicketHandler = async () => {
         const confirmBuy = confirm(`Are you want to buy a ticket for ${event.title} event?`);
-
         if (confirmBuy) {
             let eventAttenders = event.marked;
             eventAttenders.push(userId);
-
-            const updatedData = {
-                ...event,
-                marked: eventAttenders,
-            };
-
+            // const updatedData = {
+            //     ...event,
+            //     marked: eventAttenders,
+            // };
             await buyTicket(eventId);
-
             navigate(`/events/${eventId}/details`);
         }
-
         return;
     };
 
