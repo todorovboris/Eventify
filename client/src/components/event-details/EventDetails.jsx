@@ -13,7 +13,7 @@ export default function EventDetails() {
 
     //!!
     const { soldTickets } = useAllTickets(eventId);
-    console.log(soldTickets);
+    // console.log(soldTickets);
 
     if (!event) {
         return <p>Loading...</p>;

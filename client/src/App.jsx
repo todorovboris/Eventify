@@ -14,9 +14,10 @@ import Footer from './components/footer/Footer.jsx';
 import EventCreate from './components/event-create/EventCreate.jsx';
 import Logout from './components/logout/Logout.jsx';
 import EventDetails from './components/event-details/EventDetails.jsx';
+import useStorageState from './hooks/useStorageState.js';
 
 function App() {
-    const [authData, setAuthData] = useState({});
+    const [authData, setAuthData] = useStorageState('auth', {});
 
     const userLoginHandler = (userData) => {
         setAuthData(userData);
