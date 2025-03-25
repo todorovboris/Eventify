@@ -19,6 +19,8 @@ export default function useAuth() {
 
     return {
         ...authData,
+        userId: authData._id,
+        isAuthenticated: !!authData.accessToken,
         request: {
             get: (url, options) => requestWrapper('GET', url, null, options),
             post: (url, data, options) => requestWrapper('POST', url, data, options),
