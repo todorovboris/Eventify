@@ -6,9 +6,11 @@
     color: white;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center; /* Центрира по хоризонтала */
     justify-content: flex-start; /* Премества съдържанието нагоре */
-    height: 50vh; /* Дава височина на секцията */
+    min-height: 50vh;
+    width: 100%;
 }
 
 .hero h1 {

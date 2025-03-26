@@ -24,6 +24,16 @@ export const useAllEvents = () => {
     return { events };
 };
 
+export const useEventCreate = () => {
+    const { request, _id } = useAuth();
+
+    const createEvent = (eventData) => {
+        return request.post(baseUrl, { ...eventData, capacity: Number(eventData.capacity), marked: [_id] });
+    };
+
+    return { createEvent };
+};
+
 export const useLatestEvents = () => {
     const [latestEvents, setLatestEvents] = useState([]);
 
@@ -40,12 +50,17 @@ export const useLatestEvents = () => {
     return { latestEvents };
 };
 
-export const useEventCreate = () => {
-    const { request, _id } = useAuth();
+export const useTopEvents = () => {
+    const [topEvents, setTopEvents] = useState([]);
 
-    const createEvent = (eventData) => {
-        return request.post(baseUrl, { ...eventData, capacity: Number(eventData.capacity), marked: [_id] });
-    };
+    useEffect(() => {
+        const seaerchParams = new URLSearchParams({
+            sortBy: 'capacity desc',
+            pageSize: 5,
+        });
 
-    return { createEvent };
+        request.get(`${baseUrl}?${seaerchParams.toString()}`).then(setTopEvents);
+    }, []);
+
+    return { topEvents };
 };
