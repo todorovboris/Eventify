@@ -14,6 +14,7 @@ import Search from './components/search/Search.jsx';
 import UserProfile from './components/user-profile/UserProfile.jsx';
 import UserProvider from './components/providers/UserProvider.jsx';
 import AuthGuard from './components/guards/AuthGuard.jsx';
+import GuestGuard from './components/guards/GuestGuard.jsx';
 
 function App() {
     return (
@@ -32,8 +33,10 @@ function App() {
                             <Route path="/logout" element={<Logout />} />
                             <Route path="/profile" element={<UserProfile />} />
                         </Route>
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
+                        <Route element={<GuestGuard />}>
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
+                        </Route>
                         <Route path="/search" element={<Search />} />
                     </Routes>
                 </div>
