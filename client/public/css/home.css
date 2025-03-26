@@ -18,6 +18,10 @@
     margin-top: 20px; /* Премества заглавието нагоре */
 }
 
+.hero p {
+    margin-bottom: 20px;
+}
+
 .hero-buttons {
     margin-top: 20px;
 }
@@ -42,48 +46,13 @@
     background-color: #892c82;
 }
 
-.search-box {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
-}
-
-.search-input {
-    padding: 12px;
-    font-size: 16px;
-    border: none;
-    border-radius: 25px 0 0 25px;
-    width: 550px;
-    outline: none;
-}
-
-.search-btn {
-    padding: 12px 20px;
-    font-size: 16px;
-    background-color: #548edc;
-    color: white;
-    border: none;
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.search-btn:hover {
-    background-color: #892c82;
-    border: 1px solid #892c82;
-}
-
 .events,
-.categories,
 .how-it-works {
     text-align: center;
     padding: 50px 20px;
 }
 
 .event-list,
-.category-list,
 .steps {
     display: flex;
     justify-content: center;
@@ -93,7 +62,6 @@
 }
 
 .event-card,
-.category,
 .step {
     background: white;
     padding: 15px;
@@ -106,15 +74,9 @@
     overflow: hidden;
 }
 
-.category:hover,
 .event-card:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-.category {
-    background: #548edc;
-    color: white;
-    font-weight: bold;
 }
 
 .event-image {

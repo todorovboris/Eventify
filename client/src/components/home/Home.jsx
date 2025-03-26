@@ -3,7 +3,6 @@ import categoryOptions from '../../helpers/categoryOptions.js';
 import { useLatestEvents, useTopEvents } from '../../api/eventsApi.js';
 
 export default function Home() {
-    const categories = categoryOptions();
     const { latestEvents } = useLatestEvents();
     const { topEvents } = useTopEvents();
 
@@ -15,21 +14,6 @@ export default function Home() {
                 <div className="search-box">
                     <input type="text" placeholder="Search for events..." className="search-input" />
                     <button className="search-btn">Search</button>
-                </div>
-            </section>
-
-            <section className="categories">
-                <h2>CATEGORIES</h2>
-                <div className="category-list">
-                    {categories.map((category) => (
-                        <div className="category" key={category.label}>
-                            {category.label}
-                        </div>
-                    ))}
-                    {/* <div className="category">Music</div>
-                        <div className="category">Technologies</div>
-                        <div className="category">Business</div>
-                        <div className="category">Sport</div> */}
                 </div>
             </section>
 
