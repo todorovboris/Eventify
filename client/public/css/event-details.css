@@ -52,6 +52,10 @@
     align-items: center; /* Вертикално центриране */
 }
 
+.event-tickets-value {
+    font-weight: bold;
+}
+
 .event-meta svg {
     /* Ако използвате икони */
     width: 20px;

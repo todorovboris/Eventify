@@ -1,46 +1,45 @@
 import { Link, useNavigate, useParams } from 'react-router';
 import { useOneEvent } from '../../api/eventsApi.js';
-import { useUserContext } from '../../contexts/UserContext.js';
-import { useAllTickets, useBuyTicket } from '../../api/ticketsApi.js';
+import { useTickets, useBuyTicket } from '../../api/ticketsApi.js';
+import useAuth from '../../hooks/useAuth.js';
 
 export default function EventsDetails() {
     const navigate = useNavigate();
     const { eventId } = useParams();
     const { event } = useOneEvent(eventId);
-    const { _id: userId } = useUserContext();
+    const { userId } = useAuth();
     const { buyTicket } = useBuyTicket();
-
-    //!!
-    const { soldTickets } = useAllTickets(eventId);
-    // console.log(soldTickets);
+    const { tickets, addTicket } = useTickets(eventId);
 
     if (!event) {
         return <p>Loading...</p>;
     }
 
+    const buyTicketHandler = async () => {
+        const ticketResult = await buyTicket(eventId);
+        addTicket({ ...ticketResult, owner: { userId } });
+
+        navigate(`/events/${eventId}/details`);
+    };
+
+    let isBuyer = false;
+    tickets.forEach((ticket) => {
+        if (ticket._ownerId === userId) {
+            isBuyer = true;
+        }
+    });
+
+    const guestTickets = tickets.length;
+
     const isOwner = event._ownerId === userId;
-    const availableTickets = event.capacity - event.marked?.length;
+
+    const availableTickets = event.capacity - event.marked?.length - guestTickets;
 
     let isSoldOut = false;
 
     if (availableTickets <= 0) {
         isSoldOut = true;
     }
-
-    const buyTicketHandler = async () => {
-        const confirmBuy = confirm(`Are you want to buy a ticket for ${event.title} event?`);
-        if (confirmBuy) {
-            let eventAttenders = event.marked;
-            eventAttenders.push(userId);
-            // const updatedData = {
-            //     ...event,
-            //     marked: eventAttenders,
-            // };
-            await buyTicket(eventId);
-            navigate(`/events/${eventId}/details`);
-        }
-        return;
-    };
 
     return (
         <div className="event-details-container">
@@ -51,7 +50,9 @@ export default function EventsDetails() {
                     <p className="event-meta">
                         📍 {event.location} | 📅 {event.date}
                     </p>
-                    <p className="event-tickets">Available Tickets: {availableTickets}</p>
+                    <p className="event-tickets">
+                        Available Tickets: <p className="event-tickets-value">{availableTickets > 0 ? availableTickets : 'SOLD OUT'}</p>
+                    </p>
                 </div>
             </div>
             <div className="event-details-description">
@@ -62,9 +63,15 @@ export default function EventsDetails() {
             <div className="event-actions">
                 {!isOwner && (
                     <>
-                        {isSoldOut ? (
+                        {/* {isSoldOut && (
                             <button className="event-register-btn" disabled>
                                 SOLD OUT
+                            </button>
+                        )} */}
+
+                        {isBuyer ? (
+                            <button className="event-register-btn" disabled>
+                                You have a ticket
                             </button>
                         ) : (
                             <button className="event-register-btn" onClick={buyTicketHandler}>

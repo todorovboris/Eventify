@@ -8,19 +8,28 @@ export const useBuyTicket = () => {
     const { request } = useAuth();
 
     const buyTicket = (eventId) => {
-        request.post(baseUrl, { eventId });
+        return request.post(baseUrl, { eventId });
     };
 
     return { buyTicket };
 };
 
-export const useAllTickets = (eventId) => {
-    const [soldTickets, setSoldTickets] = useState('');
+export const useTickets = (eventId) => {
     const { request } = useAuth();
+    const [tickets, setTickets] = useState([]);
 
     useEffect(() => {
-        request.get(`${baseUrl}?where=eventId%3D%22${eventId}%22`).then(setSoldTickets);
+        const searchParams = new URLSearchParams({
+            where: `eventId="${eventId}"`,
+            // load: `owner=_ownerId:users`,
+        });
+
+        request.get(`${baseUrl}?${searchParams.toString()}`).then(setTickets);
     }, [eventId]);
 
-    return { soldTickets };
+    const addTicket = (ticketData) => {
+        setTickets((prevTickets) => [...prevTickets, ticketData]);
+    };
+
+    return { tickets, addTicket };
 };
