@@ -13,7 +13,7 @@ export default function Login() {
         const authData = await login(email, password);
         userLoginHandler(authData);
 
-        navigate('/');
+        navigate(-1);
     };
 
     return (
