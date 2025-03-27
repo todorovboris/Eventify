@@ -26,32 +26,97 @@ export default function UserProfile() {
         setMyEvents(filteredEvents);
     }, [ownEvents, purchasedTickets]);
 
-    console.log(myEvents);
+    const nextEvent = myEvents.shift();
 
     return (
         <div className="profile-container">
-            <div className="profile-card">
-                {/* <img src="/images/avatar.jpg" alt="Profile" className="profile-avatar" /> */}
-                <h2>{username}</h2>
-                <p className="email">
-                    <strong>Email:</strong> {email}
-                </p>
+            <div className="profile-header">
+                <div className="user-info">
+                    <div>
+                        <h2>{username}</h2>
+                        <p className="email">
+                            <strong>Email:</strong> {email}
+                        </p>
+                    </div>
+                    <Link to="/events/create">
+                        <button className="create-event-btn">Create Event</button>
+                    </Link>
+                </div>
+
+                {nextEvent && (
+                    <div className="next-event-container">
+                        <div className="next-event-info">
+                            <h3>Next Event:</h3>
+                            <p>📍 {nextEvent.location}</p>
+                            <p>📅 {nextEvent.date}</p>
+                        </div>
+
+                        <Link to={`/events/${nextEvent._id}/details`} className="next-event" key={nextEvent._id}>
+                            <img src={nextEvent.imageUrl} alt={nextEvent.title} className="event-image" />
+                            <div className="event-info">
+                                <h3>{nextEvent.title}</h3>
+                            </div>
+                        </Link>
+                    </div>
+                )}
             </div>
 
             <div className="events-section">
-                <h3>My Events</h3>
+                <h3>My Own Events</h3>
                 <div className="events-grid">
-                    {myEvents.map((event) => (
-                        <Link to={`/events/${event._id}/details`} className="event-card" key={event._id}>
-                            {event.title} - {event.date}
-                        </Link>
-                    ))}
+                    {ownEvents.length > 0 ? (
+                        ownEvents.map((event) => (
+                            <Link to={`/events/${event._id}/details`} className="event-card" key={event._id}>
+                                <h4>{event.title}</h4>
+                                <p>{event.date}</p>
+                            </Link>
+                        ))
+                    ) : (
+                        <p>No events created.</p>
+                    )}
                 </div>
             </div>
 
-            <Link to="/events/create">
-                <button className="create-event-btn">Create Event</button>
-            </Link>
+            <div className="events-section">
+                <h3>My Purchased Events</h3>
+                <div className="events-grid">
+                    {purchasedTickets.length > 0 ? (
+                        purchasedTickets.map((event) => (
+                            <Link to={`/events/${event.eventId}/details`} className="event-card" key={event.eventId}>
+                                <h4>{event.title}</h4>
+                                <p>{event.date}</p>
+                            </Link>
+                        ))
+                    ) : (
+                        <p>No tickets purchased.</p>
+                    )}
+                </div>
+            </div>
         </div>
+
+        // <div className="profile-container">
+        //     <div className="profile-card">
+        //         {/* <img src="/images/avatar.jpg" alt="Profile" className="profile-avatar" /> */}
+        //         <h2>{username}</h2>
+        //         <p className="email">
+        //             <strong>Email:</strong> {email}
+        //         </p>
+        //     </div>
+
+        //     <div className="events-section">
+        //         <h3>My Events</h3>
+        //         <div className="events-grid">
+        //             {myEvents.map((event) => (
+        //                 <Link to={`/events/${event._id}/details`} className="event-card" key={event._id}>
+        //                     {event.title} - {event.date}
+        //                 </Link>
+        //             ))}
+        //         </div>
+        //     </div>
+
+        //     <Link to="/events/create">
+        //         <button className="create-event-btn">Create Event</button>
+        //     </Link>
+        // </div>
     );
 }

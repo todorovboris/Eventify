@@ -1,5 +1,5 @@
 .profile-container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 50px auto;
     text-align: center;
     background: white;
@@ -8,60 +8,37 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile-card {
+.profile-header {
+    display: flex;
+    align-items: flex-start; /* Подравнява елементите по горния край */
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
     padding: 20px;
-    border-bottom: 2px solid #eee;
-}
-
-.profile-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #3079d8;
-}
-
-.profile-card h2 {
-    margin: 10px 0;
-    font-size: 24px;
-    color: #333;
-}
-
-.profile-card p {
-    font-size: 16px;
-    color: #666;
-    margin: 5px 0;
-}
-
-.events-section {
-    margin-top: 20px;
-}
-
-.events-section h3 {
-    font-size: 20px;
-    color: #3079d8;
-    margin-bottom: 15px;
-}
-
-.events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.event-card {
-    background: #f8f9fa;
-    padding: 15px;
+    background: #f1f5fc;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
-    color: #333;
-    transition: transform 0.2s ease;
 }
 
-.event-card:hover {
-    transform: translateY(-3px);
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 15px;
+    height: 270px; /* Опитайте различни стойности */
+}
+
+.user-info h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.user-info p {
+    font-size: 16px;
+    color: #555;
+    text-align: left;
 }
 
 .create-event-btn {
@@ -73,8 +50,82 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
+    align-self: flex-start;
 }
 
 .create-event-btn:hover {
-    background: #548edc;
+    background: #2456a1;
+}
+
+.next-event-container {
+    display: flex;
+    align-items: flex-start; /* Подравнява елементите по горния край */
+    gap: 20px;
+    padding: 15px;
+}
+
+.next-event-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+.next-event h3 {
+    margin: 0;
+    font-size: 18px;
+    color: black;
+}
+
+.next-event p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.next-event {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.next-event:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.events-section {
+    margin-top: 30px;
+}
+
+.events-section h3 {
+    font-size: 20px;
+    color: #3079d8;
+    margin-bottom: 15px;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.event-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
 }
