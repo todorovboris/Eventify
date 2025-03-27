@@ -1,6 +1,6 @@
 import { Link, useNavigate, useParams } from 'react-router';
 import { useOneEvent } from '../../api/eventsApi.js';
-import { useTickets, useBuyTicket } from '../../api/ticketsApi.js';
+import { useEventTickets, useBuyTicket } from '../../api/ticketsApi.js';
 import useAuth from '../../hooks/useAuth.js';
 
 export default function EventsDetails() {
@@ -9,7 +9,7 @@ export default function EventsDetails() {
     const { event } = useOneEvent(eventId);
     const { userId } = useAuth();
     const { buyTicket } = useBuyTicket();
-    const { tickets, addTicket } = useTickets(eventId);
+    const { tickets, addTicket } = useEventTickets(eventId);
 
     if (!event) {
         return <p>Loading...</p>;
@@ -29,11 +29,11 @@ export default function EventsDetails() {
         }
     });
 
-    const guestTickets = tickets.length;
+    const guestTicketsCount = tickets.length;
 
     const isOwner = event._ownerId === userId;
 
-    const availableTickets = event.capacity - event.marked?.length - guestTickets;
+    const availableTickets = event.capacity - guestTicketsCount;
 
     let isSoldOut = false;
 
@@ -64,18 +64,12 @@ export default function EventsDetails() {
                 <div className="event-actions">
                     {!isOwner && (
                         <>
-                            {/* {isSoldOut && (
-                            <button className="event-register-btn" disabled>
-                                SOLD OUT
-                            </button>
-                        )} */}
-
                             {isBuyer ? (
                                 <button className="event-register-btn" disabled>
                                     You have a ticket
                                 </button>
                             ) : (
-                                <button className="event-register-btn" onClick={buyTicketHandler}>
+                                <button className="event-register-btn" onClick={buyTicketHandler} disabled={isSoldOut}>
                                     Buy Ticket
                                 </button>
                             )}

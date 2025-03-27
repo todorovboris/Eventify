@@ -52,11 +52,18 @@
     padding: 50px 20px;
 }
 
+.event-catalog {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto 0;
+    padding: 20px;
+}
+
 .event-list,
 .steps {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
     margin-top: 20px;
 }
@@ -97,4 +104,35 @@
 .event-info p {
     font-size: 14px;
     color: #666;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #548edc;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button.active {
+    /* background-color: #548edc; */
+    color: black;
+    border-color: #548edc;
 }

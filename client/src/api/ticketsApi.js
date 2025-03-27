@@ -14,7 +14,7 @@ export const useBuyTicket = () => {
     return { buyTicket };
 };
 
-export const useTickets = (eventId) => {
+export const useEventTickets = (eventId) => {
     const { request } = useAuth();
     const [tickets, setTickets] = useState([]);
 
