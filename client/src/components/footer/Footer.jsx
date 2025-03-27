@@ -6,14 +6,13 @@ export default function Footer() {
             <div className="footer-container">
                 <div className="footer-section">
                     <h3>About us</h3>
-                    {/* <p>Кратко описание на вашата организация.</p> */}
                     <p>
-                        <Link to="/introduce" className="footer-button">
+                        <Link to="/contacts" className="footer-button">
                             Contact us
                         </Link>
                     </p>
                     <p>
-                        <Link to="/contact" className="footer-button">
+                        <Link to="/info" className="footer-button">
                             More information
                         </Link>
                     </p>

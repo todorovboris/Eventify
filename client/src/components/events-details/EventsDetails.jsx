@@ -2,6 +2,7 @@ import { Link, useNavigate, useParams } from 'react-router';
 import { useOneEvent } from '../../api/eventsApi.js';
 import { useEventTickets, useBuyTicket } from '../../api/ticketsApi.js';
 import useAuth from '../../hooks/useAuth.js';
+import { useState } from 'react';
 
 export default function EventsDetails() {
     const navigate = useNavigate();
@@ -30,9 +31,6 @@ export default function EventsDetails() {
     });
 
     const guestTicketsCount = tickets.length;
-
-    const isOwner = event._ownerId === userId;
-
     const availableTickets = event.capacity - guestTicketsCount;
 
     let isSoldOut = false;
@@ -41,18 +39,20 @@ export default function EventsDetails() {
         isSoldOut = true;
     }
 
+    const isOwner = event._ownerId === userId;
+
     return (
         <div className="event-details-container">
             <div className="event-header">
                 <h1>{event.title}</h1>
                 <div className="event-details-info">
                     <img src={event.imageUrl} alt={event.title} className="event-details-image" />
-                    <p className="event-meta">
+                    <div className="event-meta">
                         📍 {event.location} | 📅 {event.date}
-                    </p>
-                    <p className="event-tickets">
+                    </div>
+                    <div className="event-tickets">
                         Available Tickets: <p className="event-tickets-value">{availableTickets > 0 ? availableTickets : 'SOLD OUT'}</p>
-                    </p>
+                    </div>
                 </div>
             </div>
             <div className="event-details-description">
@@ -66,7 +66,7 @@ export default function EventsDetails() {
                         <>
                             {isBuyer ? (
                                 <button className="event-register-btn" disabled>
-                                    You have a ticket
+                                    Ticket Purchased
                                 </button>
                             ) : (
                                 <button className="event-register-btn" onClick={buyTicketHandler} disabled={isSoldOut}>
