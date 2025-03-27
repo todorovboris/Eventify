@@ -7,8 +7,8 @@ const baseUrl = 'http://localhost:3030/data/tickets';
 export const useBuyTicket = () => {
     const { request } = useAuth();
 
-    const buyTicket = (eventId) => {
-        return request.post(baseUrl, { eventId });
+    const buyTicket = (eventId, title, date, imageUrl) => {
+        return request.post(baseUrl, { eventId, title, date, imageUrl });
     };
 
     return { buyTicket };
@@ -21,7 +21,7 @@ export const useEventTickets = (eventId) => {
     useEffect(() => {
         const searchParams = new URLSearchParams({
             where: `eventId="${eventId}"`,
-            // load: `owner=_ownerId:users`,
+            load: `author=_ownerId:users`,
         });
 
         request.get(`${baseUrl}?${searchParams.toString()}`).then(setTickets);
@@ -32,4 +32,19 @@ export const useEventTickets = (eventId) => {
     };
 
     return { tickets, addTicket };
+};
+
+export const useUserPurchasedTickets = (userId) => {
+    const [purchasedTickets, setUserPurchasedTickets] = useState([]);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams({
+            sortBy: 'date',
+            where: `_ownerId="${userId}"`,
+        });
+
+        request.get(`${baseUrl}?${searchParams.toString()}`).then(setUserPurchasedTickets);
+    }, [userId]);
+
+    return { purchasedTickets };
 };

@@ -65,9 +65,8 @@ export const useTopEvents = () => {
     return { topEvents };
 };
 
-export const useUserEvents = () => {
-    const [events, setEvents] = useState([]);
-    const { userId } = useAuth();
+export const useUserOwnEvents = (userId) => {
+    const [ownEvents, setOwnEvents] = useState([]);
 
     useEffect(() => {
         const searchParams = new URLSearchParams({
@@ -75,8 +74,8 @@ export const useUserEvents = () => {
             where: `_ownerId="${userId}"`,
         });
 
-        request.get(`${baseUrl}?${searchParams.toString()}`).then(setEvents);
+        request.get(`${baseUrl}?${searchParams.toString()}`).then(setOwnEvents);
     }, [userId]);
 
-    return { events };
+    return { ownEvents };
 };

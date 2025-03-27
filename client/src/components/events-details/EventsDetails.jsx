@@ -17,8 +17,8 @@ export default function EventsDetails() {
     }
 
     const buyTicketHandler = async () => {
-        const ticketResult = await buyTicket(eventId);
-        addTicket({ ...ticketResult, owner: { userId } });
+        const ticketResult = await buyTicket(eventId, event.title, event.date, event.imageUrl);
+        addTicket({ ...ticketResult, author: { userId } });
 
         navigate(`/events/${eventId}/details`);
     };
