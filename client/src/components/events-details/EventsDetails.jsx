@@ -60,35 +60,37 @@ export default function EventsDetails() {
                 <p>{event.description}</p>
             </div>
 
-            <div className="event-actions">
-                {!isOwner && (
-                    <>
-                        {/* {isSoldOut && (
+            {userId && (
+                <div className="event-actions">
+                    {!isOwner && (
+                        <>
+                            {/* {isSoldOut && (
                             <button className="event-register-btn" disabled>
                                 SOLD OUT
                             </button>
                         )} */}
 
-                        {isBuyer ? (
-                            <button className="event-register-btn" disabled>
-                                You have a ticket
-                            </button>
-                        ) : (
-                            <button className="event-register-btn" onClick={buyTicketHandler}>
-                                Buy Ticket
-                            </button>
-                        )}
-                    </>
-                )}
-                {isOwner && (
-                    <>
-                        <Link to={`/events/${eventId}/edit`} className="event-edit-btn">
-                            Edit
-                        </Link>
-                        <button className="event-delete-btn">Delete</button>
-                    </>
-                )}
-            </div>
+                            {isBuyer ? (
+                                <button className="event-register-btn" disabled>
+                                    You have a ticket
+                                </button>
+                            ) : (
+                                <button className="event-register-btn" onClick={buyTicketHandler}>
+                                    Buy Ticket
+                                </button>
+                            )}
+                        </>
+                    )}
+                    {isOwner && (
+                        <>
+                            <Link to={`/events/${eventId}/edit`} className="event-edit-btn">
+                                Edit
+                            </Link>
+                            <button className="event-delete-btn">Delete</button>
+                        </>
+                    )}
+                </div>
+            )}
         </div>
     );
 }
