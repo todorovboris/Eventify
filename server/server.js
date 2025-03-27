@@ -1720,6 +1720,10 @@
             {
                 _ownerId: '35c62d76-8152-4626-8712-eeb96381bea8',
                 eventId: '0',
+                title: 'SoftUni ReactJS Final Exam',
+                date: '2025-04-05',
+                imageUrl: 'https://avatars.githubusercontent.com/u/6661899?s=280&v=4',
+                location: 'Online',
                 _createdOn: 1742763926237,
                 _id: '06daddd8-51c1-4fa6-9b74-2f4490e0294c',
             },

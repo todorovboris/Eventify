@@ -47,8 +47,8 @@ export default function UserProfile() {
                     <div className="next-event-container">
                         <div className="next-event-info">
                             <h3>Next Event:</h3>
-                            <p>📍 {nextEvent.location}</p>
-                            <p>📅 {nextEvent.date}</p>
+                            {/* <p>📍 {nextEvent.location}</p> */}
+                            <p>{nextEvent.date}</p>
                         </div>
 
                         <Link to={`/events/${nextEvent._id}/details`} className="next-event" key={nextEvent._id}>
