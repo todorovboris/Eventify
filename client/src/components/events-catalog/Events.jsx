@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 export default function Events() {
     const [totalPages, setTotalPages] = useState(1);
     const [currentPage, setCurrentPage] = useState(1);
-    const [eventsPerPage] = useState(12);
+    const eventsPerPage = 12;
 
     const { events } = useAllEvents();
 
@@ -14,10 +14,6 @@ export default function Events() {
             setTotalPages(Math.ceil(events.length / eventsPerPage));
         }
     }, [events, eventsPerPage]);
-
-    const indexOfLastEvent = currentPage * eventsPerPage;
-    const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
-    const currentEvents = events?.slice(indexOfFirstEvent, indexOfLastEvent) || [];
 
     const handleNextPage = () => {
         setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
@@ -42,6 +38,10 @@ export default function Events() {
         }
         return pageNumbers;
     };
+
+    const indexOfLastEvent = currentPage * eventsPerPage;
+    const indexOfFirstEvent = indexOfLastEvent - eventsPerPage;
+    const currentEvents = events?.slice(indexOfFirstEvent, indexOfLastEvent) || [];
 
     return (
         <section className="event-catalog">
