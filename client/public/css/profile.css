@@ -57,6 +57,18 @@
     background: #2456a1;
 }
 
+.next-event {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
 .next-event-container {
     display: flex;
     align-items: flex-start;
@@ -72,7 +84,8 @@
 
 .next-event-info h3 {
     font-size: 18px;
-    margin-bottom: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     color: black;
 }
 
@@ -81,21 +94,13 @@
     color: #555;
 }
 
-.next-event {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    text-align: center;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
-
 .next-event:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.event-info {
+    color: black;
 }
 
 .events-section {
