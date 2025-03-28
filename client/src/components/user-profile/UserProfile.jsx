@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useUserPurchasedTickets } from '../../api/ticketsApi.js';
 
 export default function UserProfile() {
-    const [myEvents, setMyEvents] = useState([]);
+    const [myNextEvents, setMyNextEvents] = useState([]);
 
     const { userId, username, email } = useAuth();
     const { ownEvents } = useUserOwnEvents(userId);
@@ -23,10 +23,10 @@ export default function UserProfile() {
 
         filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-        setMyEvents(filteredEvents);
+        setMyNextEvents(filteredEvents);
     }, [ownEvents, purchasedTickets]);
 
-    const nextEvent = myEvents.shift();
+    const nextEvent = myNextEvents.shift();
 
     return (
         <div className="profile-container">

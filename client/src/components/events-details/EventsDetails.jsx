@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from 'react-router';
-import { useOneEvent } from '../../api/eventsApi.js';
+import { useEventDelete, useOneEvent } from '../../api/eventsApi.js';
 import { useEventTickets, useBuyTicket } from '../../api/ticketsApi.js';
 import useAuth from '../../hooks/useAuth.js';
 import { useState } from 'react';
@@ -11,10 +11,22 @@ export default function EventsDetails() {
     const { userId } = useAuth();
     const { buyTicket } = useBuyTicket();
     const { tickets, addTicket } = useEventTickets(eventId);
+    const { deleteEvent } = useEventDelete();
 
     if (!event) {
         return <p>Loading...</p>;
     }
+
+    const deleteEventHandler = async () => {
+        const confirmForDelete = confirm(`Are you sure you want to delete ${event.title} event?`);
+
+        if (confirmForDelete) {
+            await deleteEvent(eventId);
+            navigate('/profile');
+        }
+
+        return;
+    };
 
     const buyTicketHandler = async () => {
         const ticketResult = await buyTicket(eventId, event.title, event.date, event.imageUrl);
@@ -80,7 +92,9 @@ export default function EventsDetails() {
                             <Link to={`/events/${eventId}/edit`} className="event-edit-btn">
                                 Edit
                             </Link>
-                            <button className="event-delete-btn">Delete</button>
+                            <button className="event-delete-btn" onClick={deleteEventHandler}>
+                                Delete
+                            </button>
                         </>
                     )}
                 </div>

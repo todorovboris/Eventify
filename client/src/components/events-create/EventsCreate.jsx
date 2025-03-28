@@ -11,7 +11,7 @@ function EventsCreate() {
 
         await createEvent(eventData);
 
-        navigate('/');
+        navigate('/profile');
     };
 
     return (
