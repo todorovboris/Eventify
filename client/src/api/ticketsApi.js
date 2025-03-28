@@ -48,3 +48,25 @@ export const useUserPurchasedTickets = (userId) => {
 
     return { purchasedTickets };
 };
+
+export const useTicketsDelete = (eventId) => {
+    const { request } = useAuth();
+    const [ticketsForDelete, setTicketsForDelete] = useState([]);
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams({
+            where: `eventId="${eventId}"`,
+        });
+
+        request.get(`${baseUrl}?${searchParams.toString()}`).then(setTicketsForDelete);
+    }, [eventId]);
+
+    const deleteTickets = () => {
+        ticketsForDelete.map((ticket) => {
+            const ticketId = ticket._id;
+            request.delete(`${baseUrl}/${ticketId}`);
+        });
+    };
+
+    return { ticketsForDelete, deleteTickets };
+};
