@@ -33,7 +33,7 @@ The platform supports full CRUD operations for events and includes features such
   - CSS for styling
 
 - **Backend:**
-  - Firebase (or Node.js with MongoDB)
+  - Firebase (or Node.js with MongoDB) (TBA)
   - REST API for communication with the frontend
 
 - **Other:**
