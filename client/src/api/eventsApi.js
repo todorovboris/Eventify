@@ -44,6 +44,16 @@ export const useEventDelete = () => {
     return { deleteEvent };
 };
 
+export const useEventEdit = () => {
+    const { request } = useAuth();
+
+    const edit = (eventId, newData) => {
+        request.put(`${baseUrl}/${eventId}`, { ...newData, _id: eventId });
+    };
+
+    return { edit };
+};
+
 export const useLatestEvents = () => {
     const [latestEvents, setLatestEvents] = useState([]);
 

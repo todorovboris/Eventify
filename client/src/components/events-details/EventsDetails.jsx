@@ -63,6 +63,9 @@ export default function EventsDetails() {
                         📍 {event.location} | 📅 {event.date}
                     </div>
                     <div className="event-tickets">
+                        Category: <p className="event-tickets-value">{event.category}</p>
+                    </div>
+                    <div className="event-tickets">
                         Available Tickets: <p className="event-tickets-value">{availableTickets > 0 ? availableTickets : 'SOLD OUT'}</p>
                     </div>
                 </div>

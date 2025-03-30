@@ -1,8 +1,8 @@
-export default function categoryOptions(category = '') {
+export default function categoryOptions(category) {
     const categoriesMap = {
         Music: 'Music',
         Sport: 'Sport',
-        Arts: 'Arts',
+        Art: 'Art',
         Conference: 'Conference',
         Other: 'Other',
     };

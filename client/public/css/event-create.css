@@ -75,3 +75,19 @@ button[type='submit']:hover {
     color: #777;
     margin-top: 5px;
 }
+
+.cancel-btn {
+    margin-left: 5px;
+    background-color: #548edc;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: red;
+}
