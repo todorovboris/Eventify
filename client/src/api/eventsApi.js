@@ -5,7 +5,7 @@ import request from '../utils/request.js';
 const baseUrl = 'http://localhost:3030/data/events';
 
 export const useOneEvent = (eventId) => {
-    const [event, setEvent] = useState({});
+    const [event, setEvent] = useState(null);
 
     useEffect(() => {
         request.get(`${baseUrl}/${eventId}`).then(setEvent);
