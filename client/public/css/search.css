@@ -78,3 +78,8 @@
     background-color: #892c82;
     border: 1px solid #892c82;
 }
+
+.category.active {
+    background-color: #892c82;
+    color: white;
+}
