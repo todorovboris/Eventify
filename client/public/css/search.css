@@ -27,6 +27,7 @@
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
 .category {
     background: #548edc;
     color: white;
@@ -82,4 +83,50 @@
 .category.active {
     background-color: #892c82;
     color: white;
+}
+
+.search-results {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 180px;
+    max-height: 250px;
+    overflow-y: auto;
+    position: absolute;
+    width: 625px;
+    z-index: 1000;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.search-result-item:hover {
+    background: #f8f9fa;
+}
+
+.search-result-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.search-result-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.search-result-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
 }

@@ -46,7 +46,18 @@
     background-color: #892c82;
 }
 
-.events,
+.latest-events {
+    margin-top: 100px;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.top-events {
+    margin-top: 20px;
+    text-align: center;
+    padding: 50px 20px;
+}
+
 .how-it-works {
     text-align: center;
     padding: 50px 20px;
