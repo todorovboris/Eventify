@@ -35,9 +35,6 @@ export default function Footer() {
                             Terms and conditions
                         </Link>
                     </p>
-                    {/* <li>
-                            <Link to="/sitemap" className="footer-button">Карта на сайта</Link>
-                        </li> */}
                 </div>
                 <div className="footer-section">
                     <h3>Contacts</h3>
