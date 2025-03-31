@@ -6,45 +6,31 @@ import { Link } from 'react-router';
 export default function Search() {
     let [eventsResult, setEventsResult] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [searchInput, setSearchInput] = useState('');
     const { events } = useAllEvents();
 
     const categories = categoryOptions();
 
-    const eventSearchHandler = (formData) => {
-        const inputData = formData.get('searchInput');
-        const eventDataForSearch = inputData.toLowerCase();
+    const eventSearchHandler = (e) => {
+        e.preventDefault();
+
+        const eventDataForSearch = searchInput.toLowerCase().trim();
 
         if (eventDataForSearch === '') {
-            if (selectedCategory) {
-                setEventsResult(events.filter((event) => event.category.includes(selectedCategory)));
-            } else {
-                setEventsResult([]);
-            }
+            setEventsResult(selectedCategory ? events.filter((event) => event.category.includes(selectedCategory)) : []);
             return;
         }
 
-        if (selectedCategory) {
-            setEventsResult(
-                events.filter(
-                    (event) =>
-                        event.category.includes(selectedCategory) &&
-                        (event.title.toLowerCase().includes(eventDataForSearch) ||
-                            event.description.toLowerCase().includes(eventDataForSearch) ||
-                            event.date.toLowerCase().includes(eventDataForSearch) ||
-                            event.location.toLowerCase().includes(eventDataForSearch))
-                )
-            );
-        } else {
-            setEventsResult(
-                events.filter(
-                    (event) =>
-                        event.title.toLowerCase().includes(eventDataForSearch) ||
-                        event.description.toLowerCase().includes(eventDataForSearch) ||
-                        event.date.toLowerCase().includes(eventDataForSearch) ||
-                        event.location.toLowerCase().includes(eventDataForSearch)
-                )
-            );
-        }
+        const filteredEvents = events.filter(
+            (event) =>
+                (selectedCategory ? event.category.includes(selectedCategory) : true) &&
+                (event.title.toLowerCase().includes(eventDataForSearch) ||
+                    event.description.toLowerCase().includes(eventDataForSearch) ||
+                    event.date.toLowerCase().includes(eventDataForSearch) ||
+                    event.location.toLowerCase().includes(eventDataForSearch))
+        );
+
+        setEventsResult(filteredEvents);
     };
 
     const eventCategorySearchHandler = (e) => {
@@ -71,8 +57,15 @@ export default function Search() {
             </section>
 
             <section className="search-area">
-                <form className="search-box" action={eventSearchHandler}>
-                    <input type="text" name="searchInput" placeholder="Search for events..." className="search-input" />
+                <form className="search-box" onSubmit={eventSearchHandler}>
+                    <input
+                        type="text"
+                        name="searchInput"
+                        placeholder="Search for events..."
+                        className="search-input"
+                        value={searchInput}
+                        onChange={(e) => setSearchInput(e.target.value)}
+                    />
                     <button className="search-btn">Търси</button>
                 </form>
             </section>
