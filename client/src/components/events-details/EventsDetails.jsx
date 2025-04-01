@@ -19,13 +19,14 @@ export default function EventsDetails() {
 
     const deleteEventHandler = async () => {
         const confirmForDelete = confirm(`Are you sure you want to delete ${event.title} event?`);
+        if (!confirmForDelete) return;
 
-        if (confirmForDelete) {
+        try {
             await deleteEvent(eventId);
             navigate('/profile');
+        } catch (err) {
+            return alert(err.message);
         }
-
-        return;
     };
 
     const buyTicketHandler = async () => {
