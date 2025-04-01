@@ -16,10 +16,20 @@ export default function Register() {
             return;
         }
 
-        const authData = await register(email, username, password);
-        userLoginHandler(authData);
+        if (confirmPassword == '' || password == '' || email == '' || username == '') {
+            console.log('All fields are required!');
+            return;
+        }
 
-        navigate('/');
+        try {
+            const authData = await register(email, username, password);
+
+            userLoginHandler(authData);
+
+            navigate('/');
+        } catch (err) {
+            return alert(err.message);
+        }
     };
 
     return (
