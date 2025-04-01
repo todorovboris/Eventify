@@ -26,8 +26,16 @@ export default function EventsEdit() {
             newEventData.capacity = Number(newEventData.capacity);
         }
 
-        await edit(eventId, newEventData);
-        navigate(`/events/${eventId}/details`);
+        if (!Object.values(newEventData).every((value) => !!value)) {
+            return alert('All fields are required!');
+        }
+
+        try {
+            await edit(eventId, newEventData);
+            navigate(`/events/${eventId}/details`);
+        } catch (err) {
+            return alert(err.message);
+        }
     };
 
     const editCancelHandler = () => {
@@ -101,7 +109,7 @@ export default function EventsEdit() {
                                     {/* {image && <p>Selected image: {image.name}</p>} */}
                                 </div>
 
-                                <button type="submit">Edit event</button>
+                                <button type="submit">Edit</button>
                                 <button className="cancel-btn" onClick={editCancelHandler}>
                                     Cancel
                                 </button>
