@@ -2,7 +2,11 @@ import { Navigate } from 'react-router';
 import { useLogout } from '../../api/authApi.js';
 
 export default function Logout() {
-    const { isLoggedOut } = useLogout();
+    try {
+        const { isLoggedOut } = useLogout();
 
-    return isLoggedOut ? <Navigate to="/" /> : null;
+        return isLoggedOut ? <Navigate to="/" /> : null;
+    } catch (err) {
+        return alert(err.message);
+    }
 }
