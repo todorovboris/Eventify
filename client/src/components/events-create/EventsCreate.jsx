@@ -9,9 +9,17 @@ function EventsCreate() {
     const createEventHandler = async (formData) => {
         const eventData = Object.fromEntries(formData);
 
-        await createEvent(eventData);
+        if (!Object.values(eventData).every((value) => !!value)) {
+            return alert('All fields are required!');
+        }
 
-        navigate('/profile');
+        try {
+            await createEvent(eventData);
+
+            navigate('/profile');
+        } catch (err) {
+            return alert(err.message);
+        }
     };
 
     return (
