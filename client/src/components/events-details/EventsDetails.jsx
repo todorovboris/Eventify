@@ -30,10 +30,14 @@ export default function EventsDetails() {
     };
 
     const buyTicketHandler = async () => {
-        const ticketResult = await buyTicket(eventId, event.title, event.date, event.imageUrl);
-        addTicket({ ...ticketResult, author: { userId } });
+        try {
+            const ticketResult = await buyTicket(eventId, event.title, event.date, event.imageUrl);
+            addTicket({ ...ticketResult, author: { userId } });
 
-        navigate(`/events/${eventId}/details`);
+            navigate(`/events/${eventId}/details`);
+        } catch (err) {
+            return err.message;
+        }
     };
 
     let isBuyer = false;
