@@ -10,10 +10,24 @@ export default function Login() {
     const loginHandler = async (formData) => {
         const { email, password } = Object.fromEntries(formData);
 
-        const authData = await login(email, password);
-        userLoginHandler(authData);
+        if (password == '' || email == '') {
+            console.log('All fields are required!');
+            return;
+        }
 
-        navigate(-1);
+        try {
+            const authData = await login(email, password);
+
+            if (authData.code >= 400) {
+                return alert(authData.message);
+            }
+
+            userLoginHandler(authData);
+
+            navigate(-1);
+        } catch (err) {
+            return alert(err.message);
+        }
     };
 
     return (

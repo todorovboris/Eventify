@@ -24,6 +24,10 @@ export default function Register() {
         try {
             const authData = await register(email, username, password);
 
+            if (authData.code >= 400) {
+                return alert(authData.message);
+            }
+
             userLoginHandler(authData);
 
             navigate('/');
