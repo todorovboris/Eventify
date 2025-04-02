@@ -29,7 +29,7 @@ The platform supports full CRUD operations for events and includes features such
 - **Frontend:**
   - React.js
   - React Router
-  - Context API (or Redux if bonuses are implemented)
+  - Context API
   - CSS for styling
 
 - **Backend:**
@@ -38,17 +38,18 @@ The platform supports full CRUD operations for events and includes features such
 
 - **Other:**
   - GitHub for source control
-  - Deployment on [Firebase] (planned)
+  - FE Deployment on [Firebase] 
+  - BE Deployment on [GCP Cloud]
 
 ---
 
 ## **Project Structure**
 The project is divided into the following folders:
+- `/api`: API logic for events, tickets purchasing and authentication.
 - `/components`: Contains React components for public and private sections.
-- `/services`: API logic for events and authentication.
-- `/auth`: Context API for authentication and route guards.
-- `/styles`: CSS files for styling.
-- `/utils`: Utility functions for form validation and error handling.
+- `/contexts`: Context API for authentication.
+- `/utils; /hooks; /helpers`: Utility functions and hooks which allows to modify the components easier.
+- `/public`: CSS files and images for styling.
 
 ---
 
