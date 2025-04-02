@@ -5,6 +5,8 @@ Eventify is a web application built with React that allows users to create, mana
 
 The platform supports full CRUD operations for events and includes features such as authentication, route guards, and a modern, user-friendly UI.
 
+Hosting URL: https://eventify-455612.web.app
+
 ---
 
 ## **Features**
@@ -33,7 +35,7 @@ The platform supports full CRUD operations for events and includes features such
   - CSS for styling
 
 - **Backend:**
-  - Firebase (or Node.js with MongoDB) (TBA)
+  - SoftUni Practice Server
   - REST API for communication with the frontend
 
 - **Other:**
