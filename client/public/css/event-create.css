@@ -77,9 +77,9 @@ button[type='submit']:hover {
 }
 
 .cancel-btn {
+    background-color: #f0f0f0;
+    color: #548edc;
     margin-left: 5px;
-    background-color: #548edc;
-    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 10px;
@@ -89,5 +89,5 @@ button[type='submit']:hover {
 }
 
 .cancel-btn:hover {
-    background-color: red;
+    background-color: #e0e0e0;
 }
