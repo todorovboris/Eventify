@@ -28,13 +28,13 @@ Hosting URL: https://eventify-455612.web.app
 ---
 
 ## **Technologies Used**
-- **Frontend:**
+- **FrontEnd:**
   - React.js
   - React Router
   - Context API
   - CSS for styling
 
-- **Backend:**
+- **BackEnd:**
   - SoftUni Practice Server
 
 - **Other:**
