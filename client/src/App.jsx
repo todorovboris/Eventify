@@ -15,6 +15,7 @@ import UserProfile from './components/user-profile/UserProfile.jsx';
 import UserProvider from './components/providers/UserProvider.jsx';
 import AuthGuard from './components/guards/AuthGuard.jsx';
 import GuestGuard from './components/guards/GuestGuard.jsx';
+import Info from './components/info/Info.jsx';
 
 function App() {
     return (
@@ -38,6 +39,7 @@ function App() {
                             <Route path="/register" element={<Register />} />
                         </Route>
                         <Route path="/search" element={<Search />} />
+                        <Route path="/info" element={<Info />} />
                     </Routes>
                 </div>
 

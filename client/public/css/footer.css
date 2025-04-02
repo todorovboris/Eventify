@@ -58,6 +58,11 @@ footer {
     padding-top: 20px;
 }
 
+.step {
+    text-decoration: none;
+    color: black;
+}
+
 /* Адаптивен дизайн за малки екрани */
 @media (max-width: 768px) {
     .footer-section {
