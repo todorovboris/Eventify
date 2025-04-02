@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import useAuth from '../hooks/useAuth.js';
 import request from '../utils/request.js';
 
-const baseUrl = 'http://localhost:3030/data/tickets';
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/data/tickets`;
 
 export const useBuyTicket = () => {
     const { request } = useAuth();

@@ -1,8 +1,8 @@
-import { useContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import request from '../utils/request.js';
-import { UserContext, useUserContext } from '../contexts/UserContext.js';
+import { useUserContext } from '../contexts/UserContext.js';
 
-const baseUrl = 'http://localhost:3030/users';
+const baseUrl = `${import.meta.env.VITE_APP_SERVER_URL}/users`;
 
 export const useLogin = () => {
     const login = async (email, password) => {
