@@ -48,7 +48,6 @@ export default function Register() {
                     Register
                 </button>
             </form>
-            {/* <a href="#">Forgot password?</a> */}
             <Link to="/login">Already registered? Log in</Link>
         </div>
     );

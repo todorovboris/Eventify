@@ -25,7 +25,6 @@ function EventsCreate() {
     return (
         <div className="create-event-form-container">
             <h2>Create your new event</h2>
-            {/* <form onSubmit={handleSubmit}> */}
             <form action={createEventHandler}>
                 <div className="form-group">
                     <label htmlFor="title">Title:</label>
@@ -74,8 +73,6 @@ function EventsCreate() {
                 <div className="form-group">
                     <label htmlFor="image">Image:</label>
                     <input name="imageUrl" type="text" id="image" accept="image/*" placeholder="https://..." />
-                    {/* <input type="file" id="image" accept="image/*" onChange={handleImageChange} /> */}
-                    {/* {image && <p>Selected image: {image.name}</p>} */}
                 </div>
 
                 <button type="submit">Create event</button>

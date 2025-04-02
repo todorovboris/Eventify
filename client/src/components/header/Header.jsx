@@ -26,9 +26,6 @@ export default function Header() {
                         <li>
                             <Link to="/events">Events</Link>
                         </li>
-                        {/* <li>
-                            <Link to="/artists">Artists</Link>
-                        </li> */}
                         <li>
                             <Link to="/search">Search</Link>
                         </li>

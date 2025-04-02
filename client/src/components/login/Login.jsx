@@ -40,7 +40,6 @@ export default function Login() {
                     Login
                 </button>
             </form>
-            {/* <a href="#">Forgot password?</a> */}
             <Link to="/register">Don't have an account? Sign up</Link>
         </div>
     );

@@ -105,8 +105,6 @@ export default function EventsEdit() {
                                 <div className="form-group">
                                     <label htmlFor="image">Image:</label>
                                     <input name="imageUrl" type="text" id="image" accept="image/*" placeholder="https://..." defaultValue={event.imageUrl} />
-                                    {/* <input type="file" id="image" accept="image/*" onChange={handleImageChange} /> */}
-                                    {/* {image && <p>Selected image: {image.name}</p>} */}
                                 </div>
 
                                 <button type="submit">Edit</button>

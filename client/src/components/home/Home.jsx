@@ -107,16 +107,6 @@ export default function Home() {
                     ))}
                 </div>
             </section>
-
-            {/* <section className="how-it-works">
-                <h2>How it works?</h2>
-                <div className="steps">
-                    <div className="step">🔍 Browse events</div>
-                    <div className="step">📝 Register</div>
-                    <div className="step">🎟️ Create your own event</div>
-                    <div className="step">🤝 Connect with people</div>
-                </div>
-            </section> */}
         </div>
     );
 }

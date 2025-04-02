@@ -2,7 +2,6 @@ import { Link, useNavigate, useParams } from 'react-router';
 import { useEventDelete, useOneEvent } from '../../api/eventsApi.js';
 import { useEventTickets, useBuyTicket } from '../../api/ticketsApi.js';
 import useAuth from '../../hooks/useAuth.js';
-// import { useState } from 'react';
 
 export default function EventsDetails() {
     const navigate = useNavigate();
