@@ -36,12 +36,11 @@ Hosting URL: https://eventify-455612.web.app
 
 - **Backend:**
   - SoftUni Practice Server
-  - REST API for communication with the frontend
 
 - **Other:**
   - GitHub for source control
   - FE Deployment on [Firebase] 
-  - BE Deployment on [GCP Cloud]
+  - BE Deployment on [Google Cloud Run]
 
 ---
 
