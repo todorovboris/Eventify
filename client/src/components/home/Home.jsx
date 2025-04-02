@@ -54,7 +54,7 @@ export default function Home() {
                         value={searchInput}
                         onChange={(e) => setSearchInput(e.target.value)}
                     />
-                    <button className="search-btn">Търси</button>
+                    <button className="search-btn">Search</button>
                 </form>
 
                 {eventsResult.length > 0 && (
