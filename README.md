@@ -49,7 +49,7 @@ The project is divided into the following folders:
 - `/api`: API logic for events, tickets purchasing and authentication.
 - `/components`: Contains React components for public and private sections.
 - `/contexts`: Context API for authentication.
-- `/utils; /hooks; /helpers`: Utility functions and hooks which allows to modify the components easier.
+- `/utils; /hooks; /helpers`: Utility functions and hooks which allows to modify and use the components easier.
 - `/public`: CSS files and images for styling.
 
 ---
