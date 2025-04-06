@@ -21,14 +21,13 @@ export default function UserProfile() {
     useEffect(() => {
         const combinedEvents = [...(ownEvents || []), ...(matchingTickets || [])];
 
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
+        const sortedEvents = combinedEvents.sort((a, b) => {
+            const dateTimeA = new Date(`${a.date}T${a.time}`);
+            const dateTimeB = new Date(`${b.date}T${b.time}`);
+            return dateTimeA - dateTimeB;
+        });
 
-        const filteredEvents = combinedEvents.filter((event) => new Date(event.date) >= today);
-
-        filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
-
-        setMyNextEvents(filteredEvents);
+        setMyNextEvents(sortedEvents);
     }, [ownEvents, matchingTickets]);
 
     const nextEvent = myNextEvents.shift();
