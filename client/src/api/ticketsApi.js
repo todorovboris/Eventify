@@ -21,7 +21,6 @@ export const useEventTickets = (eventId) => {
     useEffect(() => {
         const searchParams = new URLSearchParams({
             where: `eventId="${eventId}"`,
-            load: `author=_ownerId:users`,
         });
 
         request.get(`${baseUrl}?${searchParams.toString()}`).then(setTickets);
